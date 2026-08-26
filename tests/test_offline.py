@@ -118,6 +118,18 @@ class TestEspnOddsParsing(unittest.TestCase):
         self.assertEqual({r["price"] for r in rows}, {-185.0, 154.0, -115.0,
                                                        -105.0, -108.0, -112.0})
 
+    def test_model_edge_uses_no_vig_market_and_keeps_price_value_separate(self):
+        game = {"game_id": "1", "date_utc": "2026-09-13T17:00Z", "week": 1,
+                "season_type": 2, "home": {"abbr": "TEN"}, "away": {"abbr": "SEA"},
+                "odds": espn.parse_odds(self.CURRENT)}
+        proj = {"mu": 4.5, "gap": 1.0, "proj_total": 40.0, "total_gap": 2.5}
+        rows = B.price_game(game, proj, CFG, 1.0, False)
+        home = next(r for r in rows if r["market"] == "ML" and r["side"] == "home")
+        self.assertAlmostEqual(home["edge_raw"],
+                               home["model_prob"] / home["market_fair_prob"] - 1.0,
+                               places=4)
+        self.assertAlmostEqual(home["edge_real_raw"], home["ev"], places=4)
+
     def test_provider_names_ignore_spaces(self):
         selected = espn._pick_odds_block(
             [{"provider": {"name": "Other"}}, self.CURRENT], ["Draft Kings"])

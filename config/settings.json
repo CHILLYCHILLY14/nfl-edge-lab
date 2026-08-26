@@ -18,7 +18,7 @@
   },
 
   "tiers": {
-    "_note": "Edge = model probability minus the break-even probability implied by the price you are actually getting, AFTER compression and the selection haircut below. These are small numbers on purpose -- see edge_compression.",
+    "_note": "Model edge = expected return versus the complete no-vig two-way market, after compression and the selection haircut. Offered-price break-even and realized value are kept separately, and stake sizing uses the smaller compressed edge.",
     "best_bet": 0.045,
     "good": 0.028,
     "lean": 0.015,
@@ -170,7 +170,7 @@
   },
 
   "filters": {
-    "_note": "Bets that fail these are still shown, with the reason, but are never auto-logged to the ledger.",
+    "_note": "Bets that fail these are still shown with the reason. No model pick is auto-logged: My Ledger contains only wagers the user explicitly adds in the browser.",
     "min_price": -350,
     "max_price": 550,
     "skip_if_no_odds": true,

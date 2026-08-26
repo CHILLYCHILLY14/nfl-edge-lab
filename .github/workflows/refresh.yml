@@ -24,7 +24,7 @@ on:
       - "pipeline/**"
       - "config/**"
       - "tests/**"
-      - "site/index.html"
+      - "site/**"
       - "requirements.txt"
   schedule:
     - cron: "0 12,16,20 * * *"
@@ -62,6 +62,9 @@ jobs:
       - name: Verify the keyless odds parser
         run: python -m unittest tests.test_offline.TestEspnOddsParsing -v
 
+      - name: Verify the manual browser ledger
+        run: node tests/test_ledger.mjs
+
       - name: Run the model
         run: |
           if [ "${{ inputs.full }}" = "true" ]; then
@@ -72,7 +75,8 @@ jobs:
 
       # state/ has to be committed back or the model forgets everything between
       # runs: the odds snapshots that make grading and closing-line value
-      # possible, the bet ledger, and the shadow book that tracks tier accuracy.
+      # possible, plus the shadow book that tracks tier accuracy. Actual wagers
+      # are manual browser-local entries and are never committed by the bot.
       - name: Commit refreshed data
         run: |
           git config user.name  "nfl-edge bot"

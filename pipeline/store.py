@@ -9,11 +9,9 @@ Two things have to survive between runs because they cannot be re-derived later:
                measure closing line value. The first snapshot is the opener, the
                last one before kickoff is the close.
 
-  ledger.json  The bet log. A bet is written once, at the moment the model
-               qualified it, and then only ever graded -- never re-priced. This
-               is what stops the record from being quietly rewritten every time
-               the ratings move, which is the classic way a "model" ends up with
-               a fake winning history.
+  ledger.json  A compatibility output kept empty by the build. Confirmed wagers
+               live in browser-local My Ledger and are added only by the user;
+               the automatic shadow book remains the model-performance record.
 """
 
 from __future__ import annotations

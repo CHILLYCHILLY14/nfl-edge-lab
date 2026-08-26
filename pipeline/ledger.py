@@ -1,12 +1,8 @@
-"""
-The bet ledger: log once, grade once, never re-price.
+"""Legacy server-ledger helpers retained for state-file compatibility.
 
-A bet enters the ledger the first time the model qualifies it, capturing the
-number and price available *at that moment*. Later runs may see the ratings move
-or the line move; neither is allowed to touch a bet already on the book. That
-one rule is what makes the recorded ROI mean something -- a model that
-retroactively re-grades itself against the closing line will always look
-brilliant, and always be lying.
+The active site uses browser-local My Ledger. A wager enters it only after the
+user reviews the current price and clicks Add to My Ledger. The build does not
+call ``open_bet`` and publishes an empty compatibility ledger.
 
 Closing line value is computed as a separate, honest scorecard: the probability
 you locked in versus the probability the market settled on. Over a few hundred
@@ -25,14 +21,15 @@ def bet_key(game_id: str, market: str, side: str) -> str:
 
 
 def open_bet(ledger: dict, cand: dict, bankroll: float, cfg: dict) -> bool:
-    """Add a qualified candidate to the ledger if it isn't already there."""
+    """Legacy helper: add a candidate to a supplied server-ledger mapping."""
     key = bet_key(cand["game_id"], cand["market"], cand["side"])
     if key in ledger:
         return False
     # Sized off the COMPRESSED edge, not the raw one. Kelly is unforgiving of an
     # overstated probability: a model that thinks it has 12% when it has 3% does
     # not lose slowly, it eventually goes broke.
-    stake = M.stake_for(cand["model_prob"], cand["price"], bankroll, cfg, edge=cand.get("edge"))
+    stake_edge = min(float(cand.get("edge") or 0.0), float(cand.get("edge_real") or 0.0))
+    stake = M.stake_for(cand["model_prob"], cand["price"], bankroll, cfg, edge=stake_edge)
     if stake <= 0:
         return False
     ledger[key] = {

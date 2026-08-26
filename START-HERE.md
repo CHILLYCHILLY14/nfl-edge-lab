@@ -143,7 +143,7 @@ From now on it runs by itself at 8am, noon, 4pm, 8pm and 1am Eastern. You never 
 | **Injuries / Weather / News** | The live feeds, refreshed every run. |
 | **Power Rankings** | Every team rated in points, with what the market thinks beside it. |
 | **Accuracy** | Whether the labels mean anything. Check this one every few weeks. |
-| **Ledger** | The bet log and bankroll. |
+| **My Ledger** | Wagers you personally confirm, plus your bankroll. Model picks are never added automatically. |
 
 **The single most important number on the whole site** is on the Accuracy tab: whether BEST BET is beating GOOD, beating LEAN, beating PASS. If it is not, the labels are not describing anything real yet. Give it a couple of hundred graded calls before you judge.
 

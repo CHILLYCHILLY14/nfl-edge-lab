@@ -3,13 +3,13 @@ Orchestrator. Run this and the whole board rebuilds.
 
     python -m pipeline.build              # normal scheduled run (rolling window)
     python -m pipeline.build --full       # full-season backfill, rebuilds the cache
-    python -m pipeline.build --no-bet     # price everything, log nothing
+    python -m pipeline.build --no-bet     # legacy alias; wagers are always manual
     python -m pipeline.build --no-extras  # skip injuries/weather/news/stats
 
 Sequence: refresh games -> snapshot odds -> pull injuries, weather, news and
 stats -> re-solve ratings from results -> project every upcoming game -> anchor
-to the market -> price -> tier -> record every call in the shadow book -> log
-the qualified ones -> grade finals -> write the JSON the site reads.
+to the market -> price -> tier -> record every call in the shadow book ->
+publish manual-add recommendations -> write the JSON the site reads.
 
 Everything the workbook made you do by hand on a Sunday morning happens here, on
 a schedule, whether or not anyone is awake.
@@ -329,8 +329,16 @@ def price_game(g: dict, proj: dict, cfg: dict, conf: float, stale: bool,
             row["model_prob_uncalibrated"] = before
             row["model_prob"] = round(calibrate.apply(before, calib), 4)
             raw_edge = row["model_prob"] - row["breakeven"]
+        fair = row.get("market_fair_prob")
+        # Same split used by MLB Edge: qualify on the model's return versus the
+        # complete no-vig market; size on the value at the offered price.
+        raw_edge = (row["model_prob"] / fair - 1.0) if fair and fair > 0 else 0.0
+        realized_raw = float(row.get("ev") or 0.0)
         row["edge_raw"] = round(raw_edge, 4)
         row["edge"] = round(M.compress_edge(raw_edge, cfg), 4)
+        row["edge_real_raw"] = round(realized_raw, 4)
+        row["edge_real"] = round(M.compress_edge(realized_raw, cfg), 4)
+        row["edge_price"] = round(row["edge_real"] - row["edge"], 4)
         row["line_gap"] = line_gap
         row["adverse_move"] = adverse_move(move or {}, row["market"], row["side"])
         tier, why = M.tier_for(row["edge"], cfg, conf, line_gap=line_gap,
@@ -529,7 +537,8 @@ def current_week(cal: list[dict], today: dt.date) -> dict | None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--full", action="store_true", help="full-season backfill")
-    ap.add_argument("--no-bet", action="store_true", help="price only, do not log bets")
+    ap.add_argument("--no-bet", action="store_true",
+                    help="legacy alias; server-side wager logging is always disabled")
     ap.add_argument("--no-extras", action="store_true", help="skip injuries/weather/news/stats")
     ap.add_argument("--offline", action="store_true",
                     help="never touch the network; rebuild from cached state only")
@@ -588,14 +597,9 @@ def main() -> int:
     lines = store.load("lines.json", {})
     repaired_price_games = store.repair_fabricated_default_prices(lines)
     lines = store.record_lines(lines, games)
-    ledg = store.load("ledger.json", {})
-    for bet in ledg.values():
-        if args.offline:
-            break
-        if bet.get("result") == "Pending" and not store.closer(lines, bet["game_id"]):
-            rec = espn.odds_from_summary(bet["game_id"], prio)
-            if rec:
-                lines.setdefault(bet["game_id"], []).append({"ts": store.now_iso(), **rec})
+    # Actual wagers are confirmed in the browser, never opened by the build.
+    # Reset the former generated ledger during the first refresh after migration.
+    ledg = {}
     store.save("lines.json", lines)
 
     # 4. Ratings, solved from results.
@@ -864,20 +868,14 @@ def main() -> int:
     store.save("shadow.json", shadow)
     print(f"   shadow book: +{added} new calls, {shadow_graded} graded, {len(shadow)} tracked")
 
-    # 11. Log qualified bets, then grade finals.
+    # 11. Publish suggested stakes, but never create a wager automatically.
     starting = float(cfg["bankroll"]["starting"])
-    opened = 0
-    if not args.no_bet:
-        for c in board:
-            if c["tier"] == "PASS" or c.get("held"):
-                continue
-            bankroll = (starting if cfg["bankroll"]["size_off"] == "starting"
-                        else ledger.bankroll_from(ledg, starting))
-            if ledger.open_bet(ledg, c, bankroll, cfg):
-                opened += 1
-    graded = ledger.grade_all(ledg, games_by_id, lines)
+    for c in board:
+        stake_edge = min(float(c.get("edge") or 0.0), float(c.get("edge_real") or 0.0))
+        c["stake"] = (0.0 if c["tier"] == "PASS" or c.get("held") else
+                      M.stake_for(c["model_prob"], c["price"], starting, cfg, edge=stake_edge))
     store.save("ledger.json", ledg)
-    print(f"   ledger: +{opened} new, {graded} graded, {len(ledg)} total")
+    print("   ledger: manual browser confirmation; 0 automatic entries")
 
     # 12. Power rankings, with movement since the last run.
     prev_ranks = store.load("rank_history.json", {})

@@ -20,8 +20,9 @@ Five things here are meaningfully better than the spreadsheet this replaced.
 3. PROPER DE-VIGGING. Comparing a model probability to a raw, vig-inclusive
    implied probability confuses "I disagree with the market" with "the book
    charges juice". Those get separated here: the market's *fair* opinion is the
-   de-vigged number, and the price you must beat is the break-even number. Edge
-   is measured against the second, disagreement against the first.
+   de-vigged number, and the price you must beat is the break-even number. Model
+   edge is measured against the first; realized value and stake safety are
+   measured separately at the second.
 
 4. EDGE COMPRESSION. The single biggest flaw in home-made betting models is that
    they report enormous edges. A model that says it has found 15% on an NFL

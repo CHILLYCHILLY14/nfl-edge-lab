@@ -2,7 +2,9 @@
 
 An automatic NFL betting model. It fetches its own schedule, odds, injuries, weather, news and statistics, solves its own power ratings from results, prices every market against the book, tracks every call it makes, and publishes the whole thing as a web page you can drop into a Wix site.
 
-Nothing needs a paid API key. Nothing needs to be typed in each week.
+Nothing needs a paid API key. Nothing needs to be typed in each week. My Ledger
+is manual by design: a recommendation appears there only when you confirm that
+you actually placed it.
 
 This replaces the `nfl betting.xlsx` workbook. What that file did well — Kelly staking, a transparent power-rating spread, a bet ledger, edge tiers — is all here. What it did badly is fixed, and the parts that only worked if you sat down every Sunday morning and pasted numbers in now happen on a schedule whether or not you are awake.
 
@@ -40,7 +42,7 @@ The workbook was a good spreadsheet. These are the things a spreadsheet could no
 
 **Rest, travel and body clock are computed from the calendar**, which already knows who played Thursday and who flew three time zones for a 1 p.m. kickoff.
 
-**De-vigging.** Comparing a model probability against a raw vig-inclusive implied probability confuses "I disagree with the market" with "the book charges juice". Those are now separate numbers.
+**De-vigging.** Comparing a model probability against a raw vig-inclusive implied probability confuses "I disagree with the market" with "the book charges juice". Qualification now uses the complete no-vig two-way market; break-even and realized value at the offered price remain separate.
 
 **The edges are believable.** See below — this is the big one.
 
@@ -76,7 +78,7 @@ Three mechanisms keep the numbers honest, and all three are visible on the page 
 | 8% | 4.9% |
 | 20% | 5.5% |
 
-Small edges pass through untouched; large ones asymptote. Both numbers are kept and displayed, so you can always see what was squeezed. **Kelly sizes off the compressed number**, which is the whole point — Kelly is unforgiving of an overstated probability, and a model that thinks it has 12% when it has 3% does not lose slowly, it goes broke.
+Small edges pass through untouched; large ones asymptote. Both numbers are kept and displayed, so you can always see what was squeezed. **Kelly sizes off the smaller of compressed model edge and compressed realized price value**, which is the whole point — Kelly is unforgiving of an overstated probability.
 
 **3. BEST BET has to earn the label on five axes.** An edge over the threshold is necessary and not sufficient. It also needs:
 
@@ -105,7 +107,7 @@ Every game card carries the arithmetic, not just the answer.
 
 ## Tracking accuracy — including the passes
 
-The bet ledger answers *did I make money*. The **Accuracy** tab answers a more important question: *do the labels mean anything?*
+My Ledger answers *did I make money on wagers I actually placed*. The **Accuracy** tab answers a different question: *do the model labels mean anything?*
 
 A tier is a claim. BEST BET claims it beats GOOD, which claims it beats LEAN, which claims it beats the plays the model threw away. That claim is testable — but only if the passes are recorded too, and a ledger that only holds the bets you placed structurally cannot test it.
 
@@ -120,7 +122,11 @@ So every candidate the model prices is written to a **shadow book**, frozen at t
 
 If PASS plays win as often as GOOD plays, the tiering is decoration and the staking plan is built on sand. This is how you find that out in October rather than in February.
 
-Bets and shadow calls are both **written once and only ever graded, never re-priced**. A model that retroactively re-grades itself against the closing line always looks brilliant and is always lying.
+Shadow calls are automatic because they measure the model. My Ledger is not:
+review the current price, edit the prefilled suggested stake if needed, then
+click **Add to My Ledger** only after placing the wager. Confirmed entries are
+written once and graded from final ESPN scores. JSON and CSV exports provide a
+portable backup because browser storage is device-specific.
 
 ---
 
@@ -147,7 +153,7 @@ Full setup, including the Wix embed and the GitHub Actions schedule, is in [SETU
 |---|---|
 | `python -m pipeline.build` | Normal run. Rolling window, updates everything. |
 | `python -m pipeline.build --full` | Full-season backfill. Slow; rebuilds the cache. |
-| `python -m pipeline.build --no-bet` | Price everything, log nothing. |
+| `python -m pipeline.build --no-bet` | Legacy-compatible alias; builds never auto-log wagers. |
 | `python -m pipeline.build --offline` | Rebuild from cached state with no network at all. |
 | `python -m pipeline.backtest` | Walk-forward backtest — ratings solved only from games that had already finished. |
 | `python -m unittest discover -s tests` | Offline calculation tests. No network needed. |

@@ -131,7 +131,7 @@ Then `ssh -T git@github.com` again.
 
 ## 2. Let the workflow write back
 
-The model has to commit its own state — the odds snapshots that make grading and closing-line value possible, the bet ledger, and the shadow book that tracks tier accuracy. Without this it forgets everything between runs.
+The model has to commit its own state — the odds snapshots that preserve opening and closing numbers, plus the shadow book that tracks tier accuracy. My Ledger stays in your browser and is never committed by the model.
 
 **Settings → Actions → General → Workflow permissions** → select **Read and write permissions** → **Save**.
 
