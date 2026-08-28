@@ -63,6 +63,8 @@ jobs:
 
       - name: Verify the manual browser ledger
         run: node tests/test_ledger.mjs
+      - name: Browser staking tests
+        run: node tests/test_staking.mjs
 
       - name: Run the model
         run: |

@@ -290,6 +290,7 @@ footer b{color:var(--ink-2)}
   <section id="p-news"     class="panel" role="tabpanel" hidden></section>
   <section id="p-accuracy" class="panel" role="tabpanel" hidden></section>
   <section id="p-ledger"   class="panel" role="tabpanel" hidden></section>
+  <section id="p-settings" class="panel" role="tabpanel" hidden></section>
 
   <footer>
     <b>How to read this.</b> Model edge compares the model with the complete no-vig two-way market; break-even and realized value at the offered price are kept separate. Every edge shown is <i>compressed</i>: raw edges are squeezed toward a ceiling of about 5%, because a home-made model claiming 15% against the NFL market has found a bug in itself, not an opportunity. Tiers scale with confidence, and BEST BET additionally requires the model to genuinely disagree with the market line rather than just with its price.<br>
@@ -298,6 +299,7 @@ footer b{color:var(--ink-2)}
 </main>
 
 <script src="ledger.js"></script>
+<script src="staking.js"></script>
 <script>
 "use strict";
 
@@ -311,7 +313,7 @@ const FILES = ["meta","summary","board","games_detail","games",
                "simulator","outlook"];
 
 const S = {
-  meta:null, summary:null, board:[], games_detail:[], games:[], myLedger:[],
+  meta:null, summary:null, board:[], games_detail:[], games:[], myLedger:[], staking:null,
   performance:null, ratings:[], injuries:{}, news:[], team_stats:null, weather:{},
   simulator:null, outlook:[],
   sim:{away:null, home:null, neutral:false, spread:"", total:"",
@@ -322,6 +324,8 @@ const S = {
   sort:{key:"edge", dir:-1},
 };
 const L = window.NFLEdgeLedger;
+const STAKING = window.EdgeStaking;
+const STAKING_KEY = "nfl-edge.staking.v1";
 
 async function loadAll(){
   const res = await Promise.all(FILES.map(f =>
@@ -343,8 +347,20 @@ const price= v => v==null ? "—" : (v>0?"+":"")+Math.round(v);
 const cur  = v => { const s=(S.meta&&S.meta.settings&&S.meta.settings.currency_symbol)||"$";
                     return v==null?"—":s+Number(v).toFixed(2); };
 const TZ = () => (S.meta&&S.meta.settings&&S.meta.settings.timezone)||undefined;
-const ledgerStart = () => Number((S.meta&&S.meta.settings&&S.meta.settings.bankroll&&S.meta.settings.bankroll.starting)||500);
+const stakingDefaults = () => {
+  const b = (S.meta&&S.meta.settings&&S.meta.settings.bankroll)||{};
+  return {bankroll:Number(b.starting||500),system:"kelly",kelly_fraction:Number(b.kelly_fraction??0.25),
+    bankroll_pct:0.02,flat_stake:10,max_stake_pct:Number(b.max_stake_pct??0.05),
+    max_slate_exposure_pct:0.50,min_stake:Number(b.min_stake??1),round_to:Number(b.round_stake_to??0.5)};
+};
+const stakingSettings = () => {
+  if(!S.staking)S.staking=STAKING?STAKING.load(STAKING_KEY,stakingDefaults()):stakingDefaults();
+  return S.staking;
+};
+const ledgerStart = () => Number(stakingSettings().bankroll||0);
 const myLedgerSummary = () => L ? L.summarise(S.myLedger||[],ledgerStart()) : {starting_bankroll:ledgerStart(),current_bankroll:ledgerStart(),pnl:0,pending:0,settled:0,at_risk:0};
+const stakeBankroll = () => Number(myLedgerSummary().current_bankroll||0);
+const suggestedStake = row => STAKING ? STAKING.suggestedStake(row,stakingSettings(),stakeBankroll(),(((S.meta||{}).settings||{}).model||{}).max_model_prob) : 0;
 const isTracked = row => L && (S.myLedger||[]).some(entry=>L.keyOf(entry)===L.keyOf(row));
 
 function fmtDate(iso, opts){
@@ -480,12 +496,14 @@ const TABS = [
   ["news","News",          () => (S.news||[]).length],
   ["accuracy","Accuracy",  () => (S.performance&&S.performance.settled_calls)||0],
   ["ledger","My Ledger",   () => (S.myLedger||[]).length],
+  ["settings","Bankroll & Stakes", () => null],
 ];
 
 function renderTabs(){
-  $("#tabs").innerHTML = TABS.map(([id,label,count]) =>
-    `<button role="tab" data-tab="${id}" aria-selected="${S.tab===id}">${esc(label)}<span class="cnt">${count()}</span></button>`
-  ).join("");
+  $("#tabs").innerHTML = TABS.map(([id,label,count]) => {
+    const n=count();
+    return `<button role="tab" data-tab="${id}" aria-selected="${S.tab===id}">${esc(label)}${n==null?"":`<span class="cnt">${n}</span>`}</button>`;
+  }).join("");
   $("#tabs").querySelectorAll("button").forEach(b =>
     b.onclick = () => { S.tab = b.dataset.tab; render(); });
   TABS.forEach(([id]) => { const n=$("#p-"+id); if(n) n.hidden = (id!==S.tab); });
@@ -535,13 +553,14 @@ function evidenceTable(ev){
       <b>${num(ev.league&&ev.league.ppg)}</b> points scored per team per game.</div>`;
 }
 
-function ledgerControl(cand){
-  if(!cand||cand.tier==="PASS"||cand.held||!Number(cand.stake))return "";
+function ledgerControl(cand, plannedStake){
+  const amount = plannedStake==null?suggestedStake(cand):Number(plannedStake);
+  if(!cand||cand.tier==="PASS"||cand.held||!amount)return "";
   if(isTracked(cand))return `<div class="tracked">✓ In My Ledger</div>`;
-  return `<div class="addbox"><label>Stake</label><input data-stake="${esc(cand.game_id)}:${esc(cand.market)}:${esc(cand.side)}" type="number" min="0.5" step="0.5" value="${Number(cand.stake).toFixed(2)}"><button type="button" class="iconbtn" data-add="${esc(cand.game_id)}:${esc(cand.market)}:${esc(cand.side)}">Add to My Ledger</button></div>`;
+  return `<div class="addbox"><label>Suggested stake</label><input data-stake="${esc(cand.game_id)}:${esc(cand.market)}:${esc(cand.side)}" type="number" min="0.5" step="0.5" value="${amount.toFixed(2)}"><button type="button" class="iconbtn" data-add="${esc(cand.game_id)}:${esc(cand.market)}:${esc(cand.side)}">Add to My Ledger</button></div>`;
 }
 
-function gameCard(g, cand){
+function gameCard(g, cand, plannedStake){
   const p = g.projection || {};
   const tier = cand ? cand.tier : "PASS";
   const wx = g.weather, inj = g.injuries;
@@ -613,7 +632,7 @@ function gameCard(g, cand){
       </div></div></details>` : ""}`;
 
   const card = el("div", `card tier-${tierClass(tier)}`);
-  card.innerHTML = head + pickBlock + proj + stats4 + why + ledgerControl(cand) + detail;
+  card.innerHTML = head + pickBlock + proj + stats4 + why + ledgerControl(cand, plannedStake) + detail;
   return card;
 }
 
@@ -630,10 +649,12 @@ function renderBest(){
   }
   const week = selEntry();
   const sorted = cands.slice().sort((a,b)=>(b.edge||0)-(a.edge||0));
+  const planned = STAKING ? STAKING.plan(sorted,stakingSettings(),stakeBankroll(),(((S.meta||{}).settings||{}).model||{}).max_model_prob) : sorted.map(suggestedStake);
+  const stakeByKey = new Map(sorted.map((row,i)=>[`${row.game_id}:${row.market}:${row.side}`,planned[i]]));
   const deck = el("div","plays-panel");
   deck.innerHTML = `<div class="plays-head"><h2>${sorted.length} play${sorted.length===1?"":"s"} · ${esc(week&&week.label||"selected slate")}</h2>
       <span class="pill">${sorted.filter(c=>c.held).length} held until bet window</span></div>
-    <div class="play-list">${sorted.map(c=>{
+    <div class="play-list">${sorted.map((c,i)=>{
       const width=Math.max(3,Math.min(100,(Number(c.edge)||0)/0.055*100));
       return `<div class="play-row">
         <span>${tierChip(c.tier)}</span>
@@ -641,10 +662,11 @@ function renderBest(){
         <span class="play-meta">${esc(c.matchup)} · ${esc(fmtDate(c.game_date))}</span>
         <span class="edge-meter"><i style="width:${width.toFixed(0)}%"></i></span>
         <strong class="num ${posneg(c.edge)}">${pct(c.edge)} edge</strong>
+        <strong class="play-stake">${planned[i]?cur(planned[i]):"—"}</strong>
         <span class="play-state">${c.held?"HOLD":"OPEN"}</span>
       </div>`;
     }).join("")}</div>
-    <p class="plays-note">Edges are conservative, compressed estimates. Held plays are informative early prices, not instructions to bet before the configured window opens.</p>`;
+    <p class="plays-note">${esc(STAKING?STAKING.description(stakingSettings(),((S.meta&&S.meta.settings&&S.meta.settings.currency_symbol)||"$")):"Staking")} · ${pct(stakingSettings().max_stake_pct,0)} max per play · ${pct(stakingSettings().max_slate_exposure_pct,0)} max per slate. Held plays remain unstaked until the configured bet window opens.</p>`;
   host.appendChild(deck);
   host.appendChild(el("div","panel-head breakdown-head",
     `<div><h2>Every qualified matchup</h2><p>Projection, market comparison, evidence and risk controls for each play.</p></div>`));
@@ -653,7 +675,7 @@ function renderBest(){
   const cards = el("div","cards");
   byGame.forEach((cand, gid) => {
     const g = (S.games_detail||[]).find(x => x.game_id===gid);
-    if (g) cards.appendChild(gameCard(g, cand));
+    if (g) cards.appendChild(gameCard(g, cand, stakeByKey.get(`${cand.game_id}:${cand.market}:${cand.side}`)));
   });
   host.appendChild(cards);
 }
@@ -1591,6 +1613,47 @@ function renderLedger(){
   host.appendChild(w);
 }
 
+/* ======================================================= bankroll settings */
+function renderSettings(){
+  const host = $("#p-settings"), s = stakingSettings(), ledger = myLedgerSummary();
+  host.innerHTML = `<div class="panel-head"><div><h2>Bankroll &amp; stake sizing</h2>
+    <p>These values are stored only in this browser. They change suggested stake amounts, never NFL FPI inputs, projections, edges, tiers, or the public model feed.</p></div></div>
+    <div class="settings-grid">
+      <div class="settings-card">
+        <h3>Bankroll</h3>
+        <label class="setting-row"><span>Bankroll before tracked bets<small>Settled My Ledger P/L is added automatically.</small></span><input id="set-bankroll" type="number" min="0" step="10" value="${s.bankroll}"></label>
+        <label class="setting-row"><span>Staking system<small>Fractional Kelly is the conservative default.</small></span><select id="set-system">
+          <option value="kelly"${s.system==="kelly"?" selected":""}>Fractional Kelly</option>
+          <option value="flat"${s.system==="flat"?" selected":""}>Flat stake</option>
+          <option value="percent"${s.system==="percent"?" selected":""}>Percent of bankroll</option>
+        </select></label>
+        <label class="setting-row"><span>Kelly fraction<small>25% means quarter Kelly.</small></span><input id="set-kelly" type="number" min="0" max="100" step="5" value="${(s.kelly_fraction*100).toFixed(0)}"><b>%</b></label>
+        <label class="setting-row"><span>Flat stake<small>Used only with Flat stake.</small></span><input id="set-flat" type="number" min="0" step="0.5" value="${s.flat_stake}"></label>
+        <label class="setting-row"><span>Bankroll per play<small>Used only with Percent of bankroll.</small></span><input id="set-percent" type="number" min="0" max="100" step="0.25" value="${(s.bankroll_pct*100).toFixed(2)}"><b>%</b></label>
+      </div>
+      <div class="settings-card">
+        <h3>Safety rails</h3>
+        <label class="setting-row"><span>Maximum per play<small>Always enforced, under every system.</small></span><input id="set-max-play" type="number" min="0" max="100" step="0.5" value="${(s.max_stake_pct*100).toFixed(1)}"><b>%</b></label>
+        <label class="setting-row"><span>Maximum per slate<small>If needed, all suggested stakes are reduced proportionally.</small></span><input id="set-max-slate" type="number" min="0" max="100" step="1" value="${(s.max_slate_exposure_pct*100).toFixed(0)}"><b>%</b></label>
+        <label class="setting-row"><span>Minimum stake<small>Smaller calculated amounts become no bet.</small></span><input id="set-min" type="number" min="0" step="0.5" value="${s.min_stake}"></label>
+        <label class="setting-row"><span>Round to<small>Suggested stake increment.</small></span><input id="set-round" type="number" min="0.01" step="0.25" value="${s.round_to}"></label>
+        <div class="settings-preview"><span>Current setup</span><b>${cur(ledger.current_bankroll)} now · ${esc(STAKING.description(s,((S.meta&&S.meta.settings&&S.meta.settings.currency_symbol)||"$")))}</b><small>${pct(s.max_stake_pct,0)} max per play · ${pct(s.max_slate_exposure_pct,0)} max per slate</small></div>
+      </div>
+    </div>
+    <div class="settings-actions"><button type="button" class="iconbtn primary" id="save-staking">Save on this device</button><button type="button" class="iconbtn" id="reset-staking">Restore model defaults</button><span class="settings-status" id="settings-status"></span></div>
+    <div class="note settings-note"><b>Kept separate on purpose.</b> Edge thresholds, FPI weights, confidence floors, market blending, and model safety filters still live in the tested pipeline. Changing those in a browser after the board was built would make the displayed math inconsistent.</div>`;
+
+  $("#save-staking").onclick=()=>{
+    const read=id=>Number($("#"+id).value);
+    S.staking=STAKING.normalise({bankroll:read("set-bankroll"),system:$("#set-system").value,
+      kelly_fraction:read("set-kelly")/100,flat_stake:read("set-flat"),bankroll_pct:read("set-percent")/100,
+      max_stake_pct:read("set-max-play")/100,max_slate_exposure_pct:read("set-max-slate")/100,
+      min_stake:read("set-min"),round_to:read("set-round")},stakingDefaults());
+    const ok=STAKING.save(STAKING_KEY,S.staking);render();$("#settings-status").textContent=ok?"Saved locally.":"Browser storage is blocked.";
+  };
+  $("#reset-staking").onclick=()=>{STAKING.clear(STAKING_KEY);S.staking=STAKING.normalise(null,stakingDefaults());render();$("#settings-status").textContent="Defaults restored.";};
+}
+
 /* ================================================================== render */
 function saveMyLedger(){if(L&&!L.save(S.myLedger))window.alert("This browser blocked local ledger storage. Export your ledger to keep a copy.");}
 function downloadLedger(name,text,type){const blob=new Blob([text],{type});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();const url=a.href;a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
@@ -1612,7 +1675,7 @@ function render(){
   renderTabs();
   ({best:renderBest, board:renderBoard, games:renderGames, sim:renderSim, injuries:renderInjuries,
     weather:renderWeather, power:renderPower, stats:renderStats, news:renderNews,
-    accuracy:renderAccuracy, ledger:renderLedger}[S.tab] || renderBest)();
+    accuracy:renderAccuracy, ledger:renderLedger, settings:renderSettings}[S.tab] || renderBest)();
   bindLedgerActions();
 }
 
