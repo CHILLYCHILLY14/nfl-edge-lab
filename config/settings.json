@@ -90,8 +90,13 @@
     "prior_season_weight": 0.45,
     "prior_regression": 0.55,
     "_prior_regression_note": "Fraction of last season's solved rating retained as this season's preseason prior. ~0.55 matches the observed year-over-year correlation of NFL team strength.",
+    "use_espn_fpi": true,
+    "fpi_weight": 0.55,
+    "_fpi_weight_note": "Share of the independent preseason prior taken from current-season ESPN NFL FPI. FPI adds predictive EPA, QB/player and unit information; the remaining 45% keeps market win totals plus this model's prior results as a separate opinion.",
     "use_market_win_totals": true,
     "use_market_spread_ratings": true,
+    "market_spread_prior_weight": 0.35,
+    "_market_spread_prior_weight_note": "Maximum preseason weight on ratings solved from current point spreads. It fades to zero as results arrive and stays below 50% so the model cannot erase every edge by copying the same market it evaluates.",
     "_market_spread_ratings_note": "Solve a power rating per team from the posted point spreads and use it as the early-season prior, fading it out as each team plays. In Week 2 the market's opinion -- which has already priced the draft, free agency and the quarterback's ankle, with real money behind it -- is worth more than the model's own one-game sample.",
     "_win_totals_note": "Blend the preseason prior with the market's own 2026 win totals from config/win_totals.json. The market's preseason opinion is better than last season's results alone, which is exactly why the workbook seeded ratings from win totals in the first place."
   },

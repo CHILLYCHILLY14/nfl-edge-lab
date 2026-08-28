@@ -1243,8 +1243,9 @@ function renderWeather(){
 function renderPower(){
   const host = $("#p-power");
   host.innerHTML = "";
+  const fpi = (S.meta||{}).fpi||{};
   host.appendChild(el("div","panel-head",
-    `<div><h2>Power rankings</h2><p>Solved from results by ridge regression, not voted on. A rating is points better than an average team on a neutral field, so the difference between two of them is a projected margin. Strength of schedule is handled structurally — it falls out of the solve rather than being added afterwards.</p></div>`));
+    `<div><h2>Power rankings</h2><p>The preseason base blends current ESPN NFL FPI with market win totals and this model's prior-season results. Current results then update it by ridge regression. A rating is neutral-field points above or below an average team.</p></div><span class="pill">${fpi.available?`${esc(fpi.teams)} FPI teams · ${pct(fpi.weight,0)} base weight`:"FPI fallback mode"}</span>`));
   host.appendChild(el("div","note",
     `<b>Read the Gap column first.</b> <b>Market</b> is the same team priced out of the season's posted point spreads — what the betting market thinks it is worth. <b>Gap</b> is where the model disagrees. That one number explains most of a week's card: if four plays all trace back to the model having one team two points above the market, that is <i>one opinion</i> showing up four times, not four independent bets, and it should be staked like one. <b>HFA</b> is that stadium's own home-field value, shrunk hard toward the league number — most sit near it, and the ones that do not have earned it.`));
 
@@ -1253,7 +1254,7 @@ function renderPower(){
   const w = el("div","tablewrap");
   w.innerHTML = rows.length ? `<table><thead><tr>
       <th class="r">#</th><th>Team</th><th class="r">Move</th><th class="r">Rating</th><th></th>
-      <th class="r">Market</th><th class="r">Gap</th><th class="r">HFA</th>
+      <th class="r">ESPN FPI</th><th class="r">Market</th><th class="r">Gap</th><th class="r">HFA</th>
       <th class="r">Off</th><th class="r">Def</th><th>Record</th>
       <th class="r">PF</th><th class="r">PA</th><th class="r">Margin</th><th>L5</th><th>ATS</th><th>O/U</th></tr></thead>
       <tbody>${rows.map(r => `<tr>
@@ -1262,6 +1263,7 @@ function renderPower(){
         <td class="r num ${r.move>0?"pos":r.move<0?"neg":""}">${r.move==null?"—":(r.move>0?"▲"+r.move:r.move<0?"▼"+Math.abs(r.move):"—")}</td>
         <td class="r num"><b>${sgn(r.rating,2)}</b></td>
         <td style="width:110px"><div class="bar"><i style="width:${Math.abs(r.rating)/max*100}%;background:${r.rating>=0?"var(--good)":"var(--bad)"}"></i></div></td>
+        <td class="r num" style="color:var(--ink-3)">${r.fpi==null?"—":`${sgn(r.fpi,2)}${r.fpi_rank?` <small>#${Number(r.fpi_rank).toFixed(0)}</small>`:""}`}</td>
         <td class="r num" style="color:var(--ink-3)">${r.market==null?"—":sgn(r.market,2)}</td>
         <td class="r num ${posneg(r.vs_market)}"><b>${r.vs_market==null?"—":sgn(r.vs_market,2)}</b></td>
         <td class="r num" style="color:var(--ink-3)">${r.home_field==null?"—":num(r.home_field,2)}</td>

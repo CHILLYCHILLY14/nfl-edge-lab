@@ -368,6 +368,46 @@ def preseason_prior(prior_season_games: list[dict], cfg: dict) -> tuple[dict[str
     return {t: v - mean for t, v in blended.items()}, "55% market win totals / 45% last season"
 
 
+def blend_fpi_prior(base: dict[str, float], fpi: dict[str, dict],
+                    weight: float) -> tuple[dict[str, float], dict[str, dict], str]:
+    """Add current-season ESPN FPI as an independent preseason input.
+
+    NFL FPI is already stated in neutral-field points, exactly the units used
+    by this solver.  It adds player/QB and unit information that season win
+    totals and last year's final scores cannot fully express.  The existing
+    prior remains in the blend so this lab is not simply an ESPN mirror.
+    """
+    w = min(1.0, max(0.0, float(weight)))
+    fpi_raw = {team: float(row["fpi"]) for team, row in fpi.items()
+               if row.get("fpi") is not None}
+    if not fpi_raw:
+        return base, {}, "ESPN FPI unavailable"
+    fpi_mean = sum(fpi_raw.values()) / len(fpi_raw)
+    fpi_centred = {team: value - fpi_mean for team, value in fpi_raw.items()}
+    teams = set(base) | set(fpi_centred)
+    out, audit = {}, {}
+    for team in teams:
+        own, espn = base.get(team), fpi_centred.get(team)
+        if own is None:
+            value, source = espn, "ESPN FPI"
+        elif espn is None:
+            value, source = own, "win totals + results"
+        else:
+            value = (1.0 - w) * own + w * espn
+            source = "FPI + internal prior"
+        if value is None:
+            continue
+        out[team] = float(value)
+        audit[team] = {
+            "fpi": fpi_raw.get(team),
+            "fpi_rank": (fpi.get(team) or {}).get("fpi_rank"),
+            "source": source,
+        }
+    mean = sum(out.values()) / len(out) if out else 0.0
+    return ({team: value - mean for team, value in out.items()}, audit,
+            f"{w:.0%} ESPN FPI / {1-w:.0%} win totals + prior results")
+
+
 def games_played(games: list[dict]) -> dict[str, int]:
     n: dict[str, int] = defaultdict(int)
     for g in _played(games):

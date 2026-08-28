@@ -150,7 +150,8 @@ def rank_table(ratings: dict[str, float], score_ratings: dict[str, dict],
                derived_rows: dict[str, dict], form: dict[str, dict],
                previous: dict[str, int] | None = None,
                market: dict[str, float] | None = None,
-               team_hfa: dict[str, float] | None = None) -> list[dict]:
+               team_hfa: dict[str, float] | None = None,
+               fpi: dict[str, dict] | None = None) -> list[dict]:
     """
     The power rankings the site publishes.
 
@@ -188,6 +189,9 @@ def rank_table(ratings: dict[str, float], score_ratings: dict[str, dict],
             "vs_market": (round(rating - market[team], 2)
                           if market and team in market else None),
             "home_field": (team_hfa or {}).get(team),
+            "fpi": (fpi or {}).get(team, {}).get("fpi"),
+            "fpi_rank": (fpi or {}).get(team, {}).get("fpi_rank"),
+            "rating_source": (fpi or {}).get(team, {}).get("source"),
         })
     rows.sort(key=lambda r: -r["rating"])
     for i, r in enumerate(rows, start=1):

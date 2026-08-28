@@ -20,7 +20,8 @@ This replaces the `nfl betting.xlsx` workbook. What that file did well — Kelly
 | Kickoff weather for every venue | Open-Meteo | No |
 | League news | ESPN public API | No |
 | Team statistics | ESPN public API | No |
-| Power ratings | Solved here, from results | — |
+| 2026 NFL FPI + unit ratings | ESPN public API | No |
+| Power ratings | FPI + prior results + win totals, then solved from results | — |
 
 Runs five times a day on GitHub Actions, free. Deploys itself to GitHub Pages, free.
 
@@ -33,6 +34,13 @@ The workbook was a good spreadsheet. These are the things a spreadsheet could no
 **Eleven of the 32 win totals were wrong.** New England, Cincinnati, Cleveland, Pittsburgh, Jacksonville, the Chargers, Green Bay, Atlanta, New Orleans, Arizona and San Francisco were all off by a win, which is 1.6 points of power rating each — a Patriots–Bengals game was mispriced by over three points before anything else happened. More importantly, the workbook froze those numbers for the whole season. Here they are only the August prior, and from Week 1 the ratings are re-solved from actual results.
 
 **Ratings are solved, not typed.** Ridge-regularised least squares on margin of victory across every game, so strength of schedule falls out of the maths instead of being ignored. Blowouts are capped, recent games count more, and each rating is anchored to its preseason prior in proportion to how little evidence exists yet.
+
+**Current ESPN NFL FPI is part of the preseason prior.** FPI adds predictive
+EPA, quarterback/player and offensive, defensive and special-teams information
+that last year's final scores and season win totals do not fully capture. It is
+55% of the independent prior; win totals plus this model's regressed results
+remain 45%, so the lab benefits from FPI without becoming an ESPN copy. The
+last verified 2026 snapshot is cached and survives a temporary feed outage.
 
 **Ties are priced and graded correctly.** The workbook treated an NFL tie as impossible and would have graded one as a loss. A moneyline tie is a push.
 
@@ -48,7 +56,7 @@ The workbook was a good spreadsheet. These are the things a spreadsheet could no
 
 **Every call is tracked, including the passes.** See below — this is the other big one.
 
-**The market's own ratings are solved and shown.** Every posted point spread is a statement about two teams at once, so a season of spreads can be solved for a rating per team the same way results can. That gives a far better early-season prior than win totals alone, and it puts a `Gap` column on the power rankings showing where the model disagrees with the market about a *team* — which is how you spot that four plays on a card are really one opinion showing up four times.
+**The market's own ratings are solved and shown.** Every posted point spread is a statement about two teams at once, so a season of spreads can be solved for a rating per team the same way results can. Those spread-derived ratings are capped at 35% of the preseason blend and fade out as games are played; they no longer replace the independent prior and mechanically erase every possible edge. The `Gap` column shows where the final model disagrees with the market about a team.
 
 **It calibrates itself.** Once there are enough graded calls, the model fits a Platt correction on its own history and applies it to every probability it produces. If it has been running 3 points hot, it stops. The fitted parameters are published on the site rather than applied invisibly.
 

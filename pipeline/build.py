@@ -602,9 +602,31 @@ def main() -> int:
     ledg = {}
     store.save("lines.json", lines)
 
-    # 4. Ratings, solved from results.
+    # 4. Ratings. ESPN NFL FPI is an independent preseason input; it is cached
+    # so a temporary endpoint failure never collapses the board to a market-only
+    # prior. Offline rebuilds deliberately use that last verified snapshot.
+    fpi_cache_name = f"fpi_{season}.json"
+    fpi_data = store.load(fpi_cache_name, {})
+    if cfg["ratings"].get("use_espn_fpi", True) and not args.offline:
+        try:
+            fresh_fpi = espn.parse_power_index(espn.power_index(season), games)
+            if len(fresh_fpi.get("teams") or {}) >= 24:
+                fpi_data = fresh_fpi
+                store.save(fpi_cache_name, fpi_data)
+        except espn.EspnError as exc:
+            print(f"   FPI refresh unavailable; using cached prior ({exc})")
+    fpi_teams = fpi_data.get("teams") or {}
+
+    # Ratings, solved from results around the multi-source preseason prior.
     played_counts = R.games_played(games)
     preseason, prior_note = R.preseason_prior(prior_games, cfg)
+    fpi_audit = {}
+    if cfg["ratings"].get("use_espn_fpi", True):
+        preseason, fpi_audit, fpi_note = R.blend_fpi_prior(
+            preseason, fpi_teams, float(cfg["ratings"].get("fpi_weight", 0.0)))
+        prior_note = f"{fpi_note}; base was {prior_note}"
+        print(f"   ESPN NFL FPI: {len(fpi_teams)} mapped teams | "
+              f"updated {fpi_data.get('last_updated') or 'n/a'}")
     market_rat, market_hfa = ({}, 0.0)
     if cfg["ratings"].get("use_market_spread_ratings", True):
         market_rat, market_hfa = MKT.solve(games, cfg)
@@ -881,7 +903,8 @@ def main() -> int:
     prev_ranks = store.load("rank_history.json", {})
     rank_rows = ST.rank_table(rat, score_rat, derived, form,
                               previous=prev_ranks.get("latest"),
-                              market=market_rat, team_hfa=team_hfa)
+                              market=market_rat, team_hfa=team_hfa,
+                              fpi=fpi_audit)
     store.save("rank_history.json", {
         "latest": {r["team"]: r["rank"] for r in rank_rows},
         "updated": store.now_iso(),
@@ -909,6 +932,13 @@ def main() -> int:
         "divisions": divisions,
         "league_avg_points": round(league_pts, 1),
         "prior_note": prior_note,
+        "fpi": {
+            "available": bool(fpi_teams),
+            "teams": len(fpi_teams),
+            "last_updated": fpi_data.get("last_updated"),
+            "weight": float(cfg["ratings"].get("fpi_weight", 0.0)),
+            "source": "ESPN NFL Football Power Index",
+        },
         "games_final": finals,
         "games_upcoming": len(upcoming),
         "current_week": week_now,

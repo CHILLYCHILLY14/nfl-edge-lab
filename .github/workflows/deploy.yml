@@ -30,10 +30,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Stage public site without financial performance history
+        run: |
+          mkdir -p _public_site/data
+          cp -R site/. _public_site/
+          printf '{}\n' > _public_site/data/performance.json
+
       - name: Package the site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _public_site
 
       - name: Deploy to GitHub Pages
         id: deployment

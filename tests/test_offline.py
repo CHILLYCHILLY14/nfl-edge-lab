@@ -91,6 +91,30 @@ class TestEspnOddsParsing(unittest.TestCase):
         self.assertEqual((o["spread_price_home"], o["spread_price_away"]), (-115, -105))
         self.assertEqual((o["over_price"], o["under_price"]), (-108, -112))
 
+    def test_fpi_parser_joins_team_ids_without_guessing(self):
+        payload = {
+            "items": [{
+                "season": 2026,
+                "lastUpdated": "2026-06-02T15:54Z",
+                "team": {"$ref": (
+                    "http://sports.core.api.espn.com/v2/sports/football/"
+                    "leagues/nfl/seasons/2026/teams/12?lang=en&region=us"
+                )},
+                "predictives": [
+                    {"name": "fpi", "value": 4.8},
+                    {"name": "fpirank", "value": 2},
+                    {"name": "epaoffense", "value": 2.1},
+                ],
+            }]
+        }
+        games = [{"home": {"id": "12", "abbr": "KC", "name": "Chiefs"},
+                  "away": {"id": "2", "abbr": "BUF", "name": "Bills"}}]
+        parsed = espn.parse_power_index(payload, games)
+        self.assertEqual(parsed["season"], 2026)
+        self.assertEqual(parsed["teams"]["KC"]["fpi"], 4.8)
+        self.assertEqual(parsed["teams"]["KC"]["fpi_rank"], 2.0)
+        self.assertNotIn("BUF", parsed["teams"])
+
     def test_line_without_prices_fails_closed(self):
         o = espn.parse_odds({
             "provider": {"name": "DraftKings"}, "spread": -3.5,
@@ -439,6 +463,18 @@ class TestRatings(unittest.TestCase):
         # (win_total - 8.5) * 1.6 -- an 11.5-win team should be +4.8.
         self.assertAlmostEqual(max(prior.values()), (11.5 - 8.5) * 1.6, places=6)
 
+    def test_fpi_is_a_bounded_preseason_input(self):
+        base = {"KC": 1.0, "BUF": -1.0}
+        fpi = {
+            "KC": {"fpi": 5.0, "fpi_rank": 1},
+            "BUF": {"fpi": -5.0, "fpi_rank": 32},
+        }
+        blended, audit, note = R.blend_fpi_prior(base, fpi, 0.55)
+        self.assertAlmostEqual(blended["KC"], 3.2)
+        self.assertAlmostEqual(blended["BUF"], -3.2)
+        self.assertEqual(audit["KC"]["fpi"], 5.0)
+        self.assertIn("ESPN FPI", note)
+
 
 class TestGrading(unittest.TestCase):
     def test_ats_home_cover(self):
@@ -683,6 +719,7 @@ class TestMarketRatings(unittest.TestCase):
         fresh, _ = MKT.blend_prior(model_prior, market, {}, CFG)
         late, _ = MKT.blend_prior(model_prior, market, {"KC": 12, "BUF": 12}, CFG)
         self.assertGreater(fresh["KC"], late["KC"])
+        self.assertAlmostEqual(fresh["KC"], 1.4, places=6)
         self.assertAlmostEqual(late["KC"], 0.0, places=6)
 
     def test_preseason_spreads_ignored(self):

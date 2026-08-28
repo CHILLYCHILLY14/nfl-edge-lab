@@ -22,10 +22,10 @@ because it tells you whether an edge is one situation or one opinion showing up
 sixteen times. If every play on the card is powered by the same team-level
 disagreement, that is one bet, not six -- and this is where you see it.
 
-Deliberately NOT folded into the game projection. The per-game anchor in
-model.blend_to_market already pulls the line toward the market's number for that
-game; adding a market-derived rating on top would apply the same correction
-twice and leave the model with no opinion at all.
+Used only as a minority preseason prior and faded to zero as results arrive.
+The per-game anchor in model.blend_to_market already pulls the final projection
+toward that game's number, so letting spread ratings replace the independent
+prior would apply the same correction twice and leave the model with no opinion.
 """
 
 from __future__ import annotations
@@ -89,15 +89,17 @@ def blend_prior(model_prior: dict[str, float], market: dict[str, float],
     if not market:
         return model_prior, "no market ratings yet"
     need = max(1.0, float(cfg["model"]["min_games_for_full_confidence"]))
+    max_weight = min(1.0, max(0.0, float(
+        cfg["ratings"].get("market_spread_prior_weight", 0.35))))
     out: dict[str, float] = {}
     for t in set(model_prior) | set(market):
         n = float(games_played.get(t, 0))
-        w = max(0.0, 1.0 - (n / (need * 1.5)))       # 1.0 preseason -> 0 by ~6 games
+        w = max_weight * max(0.0, 1.0 - (n / (need * 1.5)))
         out[t] = w * market.get(t, 0.0) + (1 - w) * model_prior.get(t, 0.0)
     mean = sum(out.values()) / len(out) if out else 0.0
     played_any = sum(1 for v in games_played.values() if v)
-    note = ("market spreads only" if not played_any
-            else "market spreads fading out as results arrive")
+    note = (f"{max_weight:.0%} market-spread prior" if not played_any
+            else f"market-spread prior fading from {max_weight:.0%} as results arrive")
     return {t: v - mean for t, v in out.items()}, note
 
 

@@ -90,6 +90,64 @@ def summary(event_id: str) -> dict:
     return _get(f"{SITE}/summary", {"event": event_id})
 
 
+def power_index(season: int, limit: int = 50) -> dict:
+    """Current ESPN NFL FPI ratings and predictive unit components."""
+    return _get(
+        f"{CORE}/seasons/{int(season)}/powerindex",
+        {"limit": limit, "lang": "en", "region": "us"},
+    )
+
+
+def parse_power_index(payload: dict, games: Iterable[dict]) -> dict:
+    """Join FPI's lightweight ESPN team refs to schedule abbreviations."""
+    team_by_id: dict[str, dict] = {}
+    for game in games:
+        for side in ("home", "away"):
+            team = game.get(side) or {}
+            team_id = str(team.get("id") or "")
+            abbr = str(team.get("abbr") or "").strip()
+            if team_id and abbr:
+                team_by_id[team_id] = {"abbr": abbr,
+                                       "name": team.get("name") or abbr}
+
+    out, last_updated = {}, None
+    for item in payload.get("items") or []:
+        ref = str((item.get("team") or {}).get("$ref") or "")
+        hit = re.search(r"/teams/(\d+)(?:\?|$)", ref)
+        if not hit or hit.group(1) not in team_by_id:
+            continue
+        team_id = hit.group(1)
+        team = team_by_id[team_id]
+        stats = {str(row.get("name") or ""): row.get("value")
+                 for row in (item.get("predictives") or [])}
+        fpi = _num(stats.get("fpi"))
+        if fpi is None:
+            continue
+        updated = item.get("lastUpdated")
+        if updated and (last_updated is None or str(updated) > str(last_updated)):
+            last_updated = updated
+        out[team["abbr"]] = {
+            "team_id": team_id,
+            "team": team["abbr"],
+            "name": team["name"],
+            "fpi": fpi,
+            "fpi_rank": _num(stats.get("fpirank")),
+            "offense": _num(stats.get("epaoffense")),
+            "defense": _num(stats.get("epadefense")),
+            "special_teams": _num(stats.get("epaspecialteams")),
+            "projected_wins": _num(stats.get("projectedw")),
+            "projected_losses": _num(stats.get("projectedl")),
+            "playoff_pct": _num(stats.get("probmakeplayoffs")),
+            "last_updated": updated,
+        }
+    return {
+        "season": next((int(x.get("season")) for x in (payload.get("items") or [])
+                        if x.get("season") is not None), None),
+        "last_updated": last_updated,
+        "teams": out,
+    }
+
+
 def calendar(season: int) -> list[dict]:
     """
     The league's own definition of what a week is and when it runs.
