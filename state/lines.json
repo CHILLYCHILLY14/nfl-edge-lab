@@ -3915,6 +3915,18 @@
    "total": 52.5,
    "ts": "2026-08-28T21:57:48+00:00",
    "under_price": -110.0
+  },
+  {
+   "book": "DraftKings",
+   "ml_away": 130.0,
+   "ml_home": -155.0,
+   "over_price": -110.0,
+   "spread_home": -3.0,
+   "spread_price_away": -110.0,
+   "spread_price_home": -110.0,
+   "total": 52.5,
+   "ts": "2026-08-29T20:01:29+00:00",
+   "under_price": -110.0
   }
  ],
  "401872933": [
@@ -20877,6 +20889,18 @@
    "total": 47.5,
    "ts": "2026-08-28T21:57:48+00:00",
    "under_price": -110.0
+  },
+  {
+   "book": "DraftKings",
+   "ml_away": -278.0,
+   "ml_home": 225.0,
+   "over_price": -110.0,
+   "spread_home": 6.5,
+   "spread_price_away": -110.0,
+   "spread_price_home": -110.0,
+   "total": 47.5,
+   "ts": "2026-08-29T20:01:29+00:00",
+   "under_price": -110.0
   }
  ],
  "401873006": [
@@ -36554,6 +36578,18 @@
    "spread_price_home": -110.0,
    "total": 49.5,
    "ts": "2026-08-29T05:03:04+00:00",
+   "under_price": -110.0
+  },
+  {
+   "book": "DraftKings",
+   "ml_away": 180.0,
+   "ml_home": -218.0,
+   "over_price": -110.0,
+   "spread_home": -4.5,
+   "spread_price_away": -110.0,
+   "spread_price_home": -110.0,
+   "total": 49.5,
+   "ts": "2026-08-29T20:01:29+00:00",
    "under_price": -110.0
   }
  ],
@@ -64957,6 +64993,18 @@
    "total": 36.5,
    "ts": "2026-08-29T12:01:23+00:00",
    "under_price": -115.0
+  },
+  {
+   "book": "DraftKings",
+   "ml_away": 131.0,
+   "ml_home": -157.0,
+   "over_price": -108.0,
+   "spread_home": -3.0,
+   "spread_price_away": -105.0,
+   "spread_price_home": -115.0,
+   "total": 35.5,
+   "ts": "2026-08-29T20:01:29+00:00",
+   "under_price": -112.0
   }
  ],
  "401873614": [
@@ -65783,6 +65831,18 @@
    "total": 36.5,
    "ts": "2026-08-29T12:01:23+00:00",
    "under_price": -105.0
+  },
+  {
+   "book": "DraftKings",
+   "ml_away": 123.0,
+   "ml_home": -147.0,
+   "over_price": -105.0,
+   "spread_home": -2.5,
+   "spread_price_away": -105.0,
+   "spread_price_home": -115.0,
+   "total": 37.5,
+   "ts": "2026-08-29T20:01:29+00:00",
+   "under_price": -115.0
   }
  ]
 }
