@@ -521,6 +521,17 @@ def weekly_cap(cands: list[dict], cfg: dict) -> list[dict]:
     return cands
 
 
+def board_availability(cands: list[dict]) -> dict[str, int]:
+    """Separate model-qualified prices from wagers available to place now."""
+    qualified = [row for row in cands if row.get("tier") != "PASS"]
+    held = [row for row in qualified if row.get("held")]
+    return {
+        "qualified": len(qualified),
+        "actionable": len(qualified) - len(held),
+        "held": len(held),
+    }
+
+
 def current_week(cal: list[dict], today: dt.date) -> dict | None:
     """Which week we are in right now, per ESPN's own calendar."""
     now = today.isoformat()
@@ -849,15 +860,15 @@ def main() -> int:
 
     board = weekly_cap(correlation_guard(board, cfg), cfg)
     board.sort(key=lambda c: (M.TIER_RANK[c["tier"]], -c["edge"]))
-    plays = sum(1 for c in board if c["tier"] != "PASS")
-    held = sum(1 for c in board if c.get("held"))
+    availability = board_availability(board)
     no_line = sum(1 for g in upcoming
                   if (g.get("odds") or {}).get("spread_home") is None
                   and (g.get("odds") or {}).get("total") is None
                   and (g.get("odds") or {}).get("ml_home") is None)
     odds_health = espn.odds_health(upcoming)
     all_pre = bool(upcoming) and all(int(g.get("season_type") or 2) == 1 for g in upcoming)
-    print(f"   priced {len(upcoming)} games -> {len(board)} market lines, {plays} actionable")
+    print(f"   priced {len(upcoming)} games -> {len(board)} market lines, "
+          f"{availability['qualified']} qualified, {availability['actionable']} bettable now")
     print(f"   odds feed: {odds_health['status']} — {odds_health['priced_games']}/"
           f"{odds_health['line_games']} games with posted lines have real prices")
 
@@ -945,8 +956,8 @@ def main() -> int:
         "calendar": cal,
         "settings": cfg,
         "league_context": league_ctx,
-        "counts": {"board": len(board), "actionable": plays, "tracked_calls": len(shadow),
-                   "held": held, "upcoming_without_a_line": no_line,
+        "counts": {"board": len(board), **availability, "tracked_calls": len(shadow),
+                   "upcoming_without_a_line": no_line,
                    "upcoming": len(upcoming), "all_preseason": all_pre},
         "odds_health": odds_health,
         "horizon_days": int(cfg["data"]["lookahead_days"]),

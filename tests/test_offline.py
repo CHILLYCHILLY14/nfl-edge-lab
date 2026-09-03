@@ -887,6 +887,14 @@ class TestPlaceholderFixtures(unittest.TestCase):
 
 
 class TestBetHorizon(unittest.TestCase):
+    def test_availability_counts_only_qualified_held_rows(self):
+        counts = B.board_availability([
+            {"tier": "GOOD", "held": True},
+            {"tier": "LEAN"},
+            {"tier": "PASS", "held": True},
+        ])
+        self.assertEqual(counts, {"qualified": 2, "actionable": 1, "held": 1})
+
     def test_far_out_plays_are_priced_but_held(self):
         today = dt.date(2026, 9, 1)
         g = {"season_type": 2, "date_utc": "2026-09-27T17:00:00Z"}

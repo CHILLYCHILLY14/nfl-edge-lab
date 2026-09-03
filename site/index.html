@@ -467,11 +467,12 @@ function buildWeekPicker(){
 /* ==================================================================== KPIs */
 function renderKPIs(){
   const m=S.meta||{}, s=myLedgerSummary(), p=S.performance||{};
-  const plays = (S.board||[]).filter(b => b.tier!=="PASS" && inSelection(b));
+  const qualified = (S.board||[]).filter(b => b.tier!=="PASS" && inSelection(b));
+  const bettable = qualified.filter(b => !b.held);
   const allPlays = (S.board||[]).filter(b => b.tier!=="PASS");
   const maxEdge = Number((((m.settings||{}).model||{}).edge_compression)||0.055);
   const k = [
-    ["This slate", plays.length, (S.board||[]).filter(inSelection).length+" lines priced", plays.length?"flagc":""],
+    ["Bettable now", bettable.length, qualified.length+" model-qualified this slate", bettable.length?"flagc":""],
     ["All qualified", allPlays.length, (p.total_calls||0)+" model calls tracked", ""],
     ["Bankroll", cur(s.current_bankroll), "from "+cur(s.starting_bankroll), posneg((s.current_bankroll||0)-(s.starting_bankroll||0))],
     ["Settled", s.settled||0, (s.pending||0)+" pending", ""],
@@ -659,11 +660,13 @@ function renderBest(){
   }
   const week = selEntry();
   const sorted = cands.slice().sort((a,b)=>(b.edge||0)-(a.edge||0));
+  const bettable = sorted.filter(c=>!c.held).length;
+  const held = sorted.length-bettable;
   const planned = STAKING ? STAKING.plan(sorted,stakingSettings(),stakeBankroll(),(((S.meta||{}).settings||{}).model||{}).max_model_prob) : sorted.map(suggestedStake);
   const stakeByKey = new Map(sorted.map((row,i)=>[`${row.game_id}:${row.market}:${row.side}`,planned[i]]));
   const deck = el("div","plays-panel");
-  deck.innerHTML = `<div class="plays-head"><h2>${sorted.length} play${sorted.length===1?"":"s"} · ${esc(week&&week.label||"selected slate")}</h2>
-      <span class="pill">${sorted.filter(c=>c.held).length} held until bet window</span></div>
+  deck.innerHTML = `<div class="plays-head"><h2>${bettable} bettable now · ${esc(week&&week.label||"selected slate")}</h2>
+      <span class="pill">${held} qualified but held until bet window</span></div>
     <div class="play-list">${sorted.map((c,i)=>{
       const width=Math.max(3,Math.min(100,(Number(c.edge)||0)/0.055*100));
       return `<div class="play-row">
