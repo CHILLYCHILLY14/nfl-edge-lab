@@ -554,10 +554,20 @@ function evidenceTable(ev){
 }
 
 function ledgerControl(cand, plannedStake){
-  const amount = plannedStake==null?suggestedStake(cand):Number(plannedStake);
-  if(!cand||cand.tier==="PASS"||cand.held||!amount)return "";
+  if(!cand||cand.tier==="PASS"||cand.held)return "";
+  const suggested = plannedStake==null?suggestedStake(cand):Number(plannedStake);
+  const amount = suggested>0?suggested:Number(stakingSettings().min_stake||1);
   if(isTracked(cand))return `<div class="tracked">✓ In My Ledger</div>`;
   return `<div class="addbox"><label>Suggested stake</label><input data-stake="${esc(cand.game_id)}:${esc(cand.market)}:${esc(cand.side)}" type="number" min="0.5" step="0.5" value="${amount.toFixed(2)}"><button type="button" class="iconbtn" data-add="${esc(cand.game_id)}:${esc(cand.market)}:${esc(cand.side)}">Add to My Ledger</button></div>`;
+}
+
+function ledgerButton(cand, plannedStake){
+  if(!cand||cand.tier==="PASS")return `<button type="button" class="iconbtn" disabled title="The model passed on this wager">–</button>`;
+  if(cand.held)return `<button type="button" class="iconbtn" disabled title="${esc(cand.hold_note||"Outside the betting window")}">HOLD</button>`;
+  if(isTracked(cand))return `<span class="tracked">✓ In ledger</span>`;
+  const suggested=plannedStake==null?suggestedStake(cand):Number(plannedStake);
+  const amount=suggested>0?suggested:Number(stakingSettings().min_stake||1);
+  return `<button type="button" class="iconbtn" data-add="${esc(cand.game_id)}:${esc(cand.market)}:${esc(cand.side)}" data-default-stake="${amount.toFixed(2)}">+ Ledger</button>`;
 }
 
 function gameCard(g, cand, plannedStake){
@@ -663,7 +673,7 @@ function renderBest(){
         <span class="edge-meter"><i style="width:${width.toFixed(0)}%"></i></span>
         <strong class="num ${posneg(c.edge)}">${pct(c.edge)} edge</strong>
         <strong class="play-stake">${planned[i]?cur(planned[i]):"—"}</strong>
-        <span class="play-state">${c.held?"HOLD":"OPEN"}</span>
+        <span class="play-state">${ledgerButton(c,planned[i])}</span>
       </div>`;
     }).join("")}</div>
     <p class="plays-note">${esc(STAKING?STAKING.description(stakingSettings(),((S.meta&&S.meta.settings&&S.meta.settings.currency_symbol)||"$")):"Staking")} · ${pct(stakingSettings().max_stake_pct,0)} max per play · ${pct(stakingSettings().max_slate_exposure_pct,0)} max per slate. Held plays remain unstaked until the configured bet window opens.</p>`;
@@ -772,7 +782,7 @@ function renderBoard(){
 
   const w = el("div","tablewrap");
   w.innerHTML = `<table><thead><tr>${cols.map(([k,l]) =>
-    `<th class="sortable ${["price","model_prob","breakeven","edge","edge_raw","line_gap","confidence","ev"].includes(k)?"r":""}" data-k="${k}">${esc(l)}</th>`).join("")}</tr></thead>
+    `<th class="sortable ${["price","model_prob","breakeven","edge","edge_raw","line_gap","confidence","ev"].includes(k)?"r":""}" data-k="${k}">${esc(l)}</th>`).join("")}<th>Track</th></tr></thead>
     <tbody>${rows.map(r => `<tr>
       <td class="stripe s-${tierClass(r.tier)}">${tierChip(r.tier)}</td>
       <td class="matchup">${esc(r.matchup)}<small>${esc(fmtDate(r.game_date,{hour:undefined,minute:undefined}))}${r.book?" · "+esc(r.book):""}</small></td>
@@ -787,6 +797,7 @@ function renderBoard(){
       <td class="r num">${num(r.confidence,2)}</td>
       <td class="r num ${posneg(r.ev)}">${r.ev==null?"—":sgn(r.ev*100,1)+"%"}</td>
       <td style="color:var(--ink-3);font-size:12px;max-width:280px">${esc(r.filtered||r.hold_note||r.tier_note||"")}</td>
+      <td>${ledgerButton(r)}</td>
     </tr>`).join("")}</tbody></table>`;
   if (!rows.length) w.innerHTML = `<div class="empty">Nothing matches these filters.</div>`;
   w.querySelectorAll("th.sortable").forEach(th => th.onclick = () => {
@@ -1660,7 +1671,7 @@ function downloadLedger(name,text,type){const blob=new Blob([text],{type});const
 function bindLedgerActions(){
   document.querySelectorAll("[data-add]").forEach(button=>button.onclick=()=>{
     const id=button.dataset.add;const cand=(S.board||[]).find(row=>`${row.game_id}:${row.market}:${row.side}`===id);
-    if(!cand||isTracked(cand))return;const input=[...document.querySelectorAll("[data-stake]")].find(node=>node.dataset.stake===id);const stake=Number(input&&input.value);
+    if(!cand||isTracked(cand))return;const input=[...document.querySelectorAll("[data-stake]")].find(node=>node.dataset.stake===id);const stake=Number(input?input.value:button.dataset.defaultStake);
     if(!isFinite(stake)||stake<=0){window.alert("Enter the stake you actually placed.");return;}
     S.myLedger.push(L.entryFrom(cand,stake));saveMyLedger();render();
   });
