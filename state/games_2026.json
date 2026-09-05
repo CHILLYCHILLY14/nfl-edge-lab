@@ -2199,8 +2199,8 @@
    "book": "Draft Kings",
    "details": "SEA -3.5",
    "keyless": true,
-   "ml_away": 154.0,
-   "ml_home": -185.0,
+   "ml_away": 150.0,
+   "ml_home": -180.0,
    "over_price": -105.0,
    "priced_markets": [
     "ML",
@@ -2255,8 +2255,8 @@
    "book": "Draft Kings",
    "details": "LAR -3.5",
    "keyless": true,
-   "ml_away": 160.0,
-   "ml_home": -192.0,
+   "ml_away": 164.0,
+   "ml_home": -198.0,
    "over_price": -105.0,
    "priced_markets": [
     "ML",
@@ -2759,8 +2759,8 @@
    "book": "Draft Kings",
    "details": "LAC -10.5",
    "keyless": true,
-   "ml_away": 470.0,
-   "ml_home": -650.0,
+   "ml_away": 425.0,
+   "ml_home": -575.0,
    "over_price": -115.0,
    "priced_markets": [
     "ML",
