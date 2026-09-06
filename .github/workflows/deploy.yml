@@ -29,6 +29,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # A queued deployment must include data committed by the refresh.
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
