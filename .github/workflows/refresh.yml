@@ -21,7 +21,7 @@ on:
       - "requirements.txt"
   schedule:
     - cron: "17 */4 * * 2-3"
-    - cron: "17 */2 * * 4-1"
+    - cron: "17 */2 * * 0,1,4,5,6"
   workflow_dispatch:
     inputs:
       full:
