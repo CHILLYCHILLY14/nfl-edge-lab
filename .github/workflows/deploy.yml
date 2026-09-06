@@ -1,6 +1,6 @@
 name: Deploy to GitHub Pages
 
-# Publishes whatever is currently in site/ every time the repository changes.
+# Publishes the prepared public site every time the repository changes.
 #
 # The Refresh model workflow also deploys at the end of its own run, so this one
 # is the safety net rather than the main path: it means an edit made straight on
@@ -30,11 +30,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Stage public site without financial performance history
-        run: |
-          mkdir -p _public_site/data
-          cp -R site/. _public_site/
-          printf '{}\n' > _public_site/data/performance.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Prepare public Best Bets site
+        run: python tools/prepare_public_site.py
 
       - name: Package the site
         uses: actions/upload-pages-artifact@v3
