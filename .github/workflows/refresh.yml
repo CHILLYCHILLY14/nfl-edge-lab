@@ -1,19 +1,11 @@
 name: Refresh model
 
-# Free on GitHub Actions for a public repo, and comfortably inside the free
-# minutes for a private one: each run takes well under a minute.
+# Credential-free refresh using public data only. NFL prices, injury reports and
+# weather move fastest from Thursday through Monday, so those days refresh every
+# two hours. Tuesday-Wednesday use a lighter four-hour cadence.
 #
-# Times are UTC. The schedule below is tuned for Eastern time and for how the
-# NFL week actually moves:
-#   12:00 UTC = 08:00 ET  morning line check, injury report lands
-#   16:00 UTC = 12:00 ET  before the early Sunday kicks
-#   20:00 UTC = 16:00 ET  before the late window
-#   00:00 UTC = 20:00 ET  before Sunday and Monday night
-#   05:00 UTC = 01:00 ET  after the late games, to grade
-#
-# GitHub's scheduler is best-effort and can run several minutes late. That is
-# fine for a model that reads a market every few hours. Do not treat it as a
-# live feed, and do not point it at a game kicking off in ten minutes.
+# Times are UTC and GitHub's scheduler is best-effort. This is a regularly
+# refreshed market model, not a live in-game odds feed.
 on:
   push:
     branches: [main]
@@ -24,11 +16,12 @@ on:
       - "pipeline/**"
       - "config/**"
       - "tests/**"
+      - "tools/**"
       - "site/**"
       - "requirements.txt"
   schedule:
-    - cron: "0 12,16,20 * * *"
-    - cron: "0 0,5 * * *"
+    - cron: "17 */4 * * 2-3"
+    - cron: "17 */2 * * 4-1"
   workflow_dispatch:
     inputs:
       full:
@@ -63,6 +56,7 @@ jobs:
 
       - name: Verify the manual browser ledger
         run: node tests/test_ledger.mjs
+
       - name: Browser staking tests
         run: node tests/test_staking.mjs
 
@@ -96,11 +90,8 @@ jobs:
           git pull --rebase --autostash origin ${{ github.ref_name }} || true
           git push
 
-      - name: Stage public site without financial performance history
-        run: |
-          mkdir -p _public_site/data
-          cp -R site/. _public_site/
-          printf '{}\n' > _public_site/data/performance.json
+      - name: Prepare public Best Bets site
+        run: python tools/prepare_public_site.py
 
       - name: Package the site
         uses: actions/upload-pages-artifact@v3
