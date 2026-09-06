@@ -333,7 +333,9 @@ def price_game(g: dict, proj: dict, cfg: dict, conf: float, stale: bool,
         # Same split used by MLB Edge: qualify on the model's return versus the
         # complete no-vig market; size on the value at the offered price.
         raw_edge = (row["model_prob"] / fair - 1.0) if fair and fair > 0 else 0.0
-        realized_raw = float(row.get("ev") or 0.0)
+        push = float(row.get("push_prob") or 0.0)
+        row["ev"] = M.expected_value(row["model_prob"] * (1 - push), row["price"], push)
+        realized_raw = row["ev"]
         row["edge_raw"] = round(raw_edge, 4)
         row["edge"] = round(M.compress_edge(raw_edge, cfg), 4)
         row["edge_real_raw"] = round(realized_raw, 4)
@@ -906,7 +908,8 @@ def main() -> int:
     for c in board:
         stake_edge = min(float(c.get("edge") or 0.0), float(c.get("edge_real") or 0.0))
         c["stake"] = (0.0 if c["tier"] == "PASS" or c.get("held") else
-                      M.stake_for(c["model_prob"], c["price"], starting, cfg, edge=stake_edge))
+                      M.stake_for(c["model_prob"], c["price"], starting, cfg, edge=stake_edge,
+                                  push_prob=float(c.get("push_prob") or 0.0)))
     store.save("ledger.json", ledg)
     print("   ledger: manual browser confirmation; 0 automatic entries")
 

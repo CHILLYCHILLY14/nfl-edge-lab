@@ -83,14 +83,21 @@
       const dec = decimal(row.price);
       if (!dec) return 0;
       const ceiling = finite(maxModelProb, 0.85);
-      const p = clamp(row.model_prob, 0, ceiling);
+      const active = 1 - clamp(row.push_prob || 0, 0, 1);
+      if (active <= 0) return 0;
+      // Match Python: compressed ROI is converted back to a conditional win
+      // probability. Legacy/custom rows without edges retain probability sizing.
+      const hasEdges = row.edge != null && row.edge_real != null;
+      const edge = Math.min(finite(row.edge, 0), finite(row.edge_real, 0));
+      const p = clamp(hasEdges ? (1 + edge / active) / dec : row.model_prob, 0, ceiling);
       const fullKelly = Math.max(0, ((p * (dec - 1)) - (1 - p)) / (dec - 1));
       const confidenceScale = clamp(row.stake_multiplier == null ? 1 : row.stake_multiplier, 0, 1);
       raw = roll * fullKelly * s.kelly_fraction * confidenceScale;
     }
 
     raw = Math.min(raw, roll * s.max_stake_pct);
-    const rounded = Math.round(raw / s.round_to) * s.round_to;
+    const capSteps = Math.floor((roll * s.max_stake_pct + 1e-9) / s.round_to);
+    const rounded = Math.min(Math.round(raw / s.round_to), capSteps) * s.round_to;
     return rounded + 1e-9 < s.min_stake ? 0 : Math.round(rounded * 100) / 100;
   }
 

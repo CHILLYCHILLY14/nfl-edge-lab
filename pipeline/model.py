@@ -283,7 +283,7 @@ def expected_value(p: float, american: float, p_push: float = 0.0) -> float:
 
 
 def stake_for(p: float, american: float, bankroll: float, cfg: dict,
-              edge: float | None = None) -> float:
+              edge: float | None = None, push_prob: float = 0.0) -> float:
     """
     Fractional Kelly, capped, and sized off the COMPRESSED edge.
 
@@ -294,13 +294,19 @@ def stake_for(p: float, american: float, bankroll: float, cfg: dict,
     """
     bk = cfg["bankroll"]
     if edge is not None:
-        # Rebuild the probability implied by the compressed edge at this price.
-        p = min(american_to_prob(american) + edge, float(cfg["model"]["max_model_prob"]))
+        # edge is ROI per unit staked, not probability points. Convert to
+        # conditional win probability, since a push returns the original stake.
+        active = 1.0 - max(0.0, min(1.0, push_prob))
+        if active <= 0.0:
+            return 0.0
+        p = max(0.0, (1.0 + edge / active) / american_to_decimal(american))
     f = kelly_fraction(min(p, float(cfg["model"]["max_model_prob"])), american) * float(bk["kelly_fraction"])
     f = min(f, float(bk["max_stake_pct"]))
     raw = f * bankroll
     step = float(bk.get("round_stake_to") or 0.5)
-    stake = round(raw / step) * step if step > 0 else raw
+    stake = (min(math.floor(raw / step + 0.5),
+                 math.floor(bankroll * float(bk["max_stake_pct"]) / step + 1e-9)) * step
+             if step > 0 else raw)
     return 0.0 if stake < float(bk.get("min_stake") or 0) else round(stake, 2)
 
 
