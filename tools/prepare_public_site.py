@@ -71,8 +71,6 @@ html = replace_once(
 
 index.write_text(html, encoding="utf-8")
 
-# Public pages intentionally omit the repository-side performance object. The
-# user's actual wager ledger stays browser-local and is never published.
-(DST / "data" / "performance.json").write_text("{}\n", encoding="utf-8")
+# Model-only performance is public; actual wagers remain browser-local.
 
 print(f"Prepared {DST} with NFL Best Bets presentation patches")

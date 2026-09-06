@@ -87,8 +87,8 @@
       if (active <= 0) return 0;
       // Match Python: compressed ROI is converted back to a conditional win
       // probability. Legacy/custom rows without edges retain probability sizing.
-      const hasEdges = row.edge != null && row.edge_real != null;
-      const edge = Math.min(finite(row.edge, 0), finite(row.edge_real, 0));
+      const hasEdges = row.action_edge != null || (row.edge != null && row.edge_real != null);
+      const edge = row.action_edge != null ? finite(row.action_edge,0) : Math.min(finite(row.edge, 0), finite(row.edge_real, 0));
       const p = clamp(hasEdges ? (1 + edge / active) / dec : row.model_prob, 0, ceiling);
       const fullKelly = Math.max(0, ((p * (dec - 1)) - (1 - p)) / (dec - 1));
       const confidenceScale = clamp(row.stake_multiplier == null ? 1 : row.stake_multiplier, 0, 1);

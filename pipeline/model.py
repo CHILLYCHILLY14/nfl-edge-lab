@@ -317,6 +317,15 @@ def stake_for(p: float, american: float, bankroll: float, cfg: dict,
 TIER_RANK = {"BEST BET": 0, "GOOD": 1, "LEAN": 2, "PASS": 3}
 
 
+def risk_adjusted_edge(edge: float, cfg: dict, confidence: float) -> float:
+    """Expected return after selection and bounded data-uncertainty reserves."""
+    if confidence <= 0:
+        return float("-inf")
+    confidence = min(1.0, max(0.0, float(confidence)))
+    return (float(edge) - float(cfg["model"].get("selection_haircut", .01))
+            - (1-confidence)*float(cfg["model"].get("confidence_penalty_max", .018)))
+
+
 def tier_for(edge: float, cfg: dict, confidence: float,
              line_gap: float | None = None, price: float | None = None,
              stale: bool = False, adverse: float | None = None) -> tuple[str, str | None]:
@@ -330,9 +339,8 @@ def tier_for(edge: float, cfg: dict, confidence: float,
     edges you select are overstated even when the model is well calibrated
     across all games. A flat haircut is the blunt, honest correction.
 
-    Confidence scales the thresholds rather than the edge, so a thin-data game
-    has to clear a higher bar for the same label instead of having its number
-    quietly rewritten.
+    Confidence subtracts a bounded uncertainty reserve from expected return.
+    The threshold is fixed, so early-season GOOD remains mathematically reachable.
 
     The lock rules gate BEST BET specifically. That label should mean the model,
     the market and the data agree, and it should be rare. Anything that clears
@@ -342,14 +350,13 @@ def tier_for(edge: float, cfg: dict, confidence: float,
     t = cfg["tiers"]
     if confidence <= 0:
         return "PASS", "no usable price"
-    edge = edge - float(cfg["model"].get("selection_haircut", 0.0))
-    scale = 1.0 / max(0.35, confidence)
+    edge = risk_adjusted_edge(edge, cfg, confidence)
 
-    if edge >= float(t["best_bet"]) * scale:
+    if edge >= float(t["best_bet"]):
         candidate = "BEST BET"
-    elif edge >= float(t["good"]) * scale:
+    elif edge >= float(t["good"]):
         candidate = "GOOD"
-    elif edge >= float(t["lean"]) * scale:
+    elif edge >= float(t["lean"]):
         candidate = "LEAN"
     else:
         return "PASS", None
