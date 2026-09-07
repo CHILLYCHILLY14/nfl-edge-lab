@@ -3200,7 +3200,7 @@
   "week": 2
  },
  "401872937:ML:away": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": 0.0522,
   "edge_raw": 0.0999,
@@ -4700,7 +4700,7 @@
   "week": 2
  },
  "401872947:ML:away": {
-  "closing_tier": "PASS",
+  "closing_tier": "GOOD",
   "confidence": 0.5,
   "edge": 0.0526,
   "edge_raw": 0.1042,
