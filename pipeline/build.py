@@ -890,7 +890,7 @@ def main() -> int:
     game_history.update(os.path.join(store.STATE_DIR, "model_accuracy.json"),
                         os.path.join(SITE_DATA, "accuracy.json"), board, game_cards,
                         games, "NFL", historical=store.load("shadow.json", {}).values(),
-                        old_forecasts=store.load("forecasts.json", {}))
+                        old_forecasts=store.load("forecasts.json", {}), season=season)
 
     # 9. Forecast log: what the model said about each game, bet or no bet.
     fc_log = store.load("forecasts.json", {})

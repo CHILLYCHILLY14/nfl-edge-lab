@@ -183,8 +183,11 @@ def buckets(rows, field):
     return {k: call_stats(v) for k, v in sorted(groups.items())}
 
 
-def report(log, label="Model accuracy"):
-    rows = list(log.get("records", {}).values())
+def report(log, label="Model accuracy", season=None, season_type=None):
+    all_rows = list(log.get("records", {}).values())
+    rows = [r for r in all_rows
+            if (season is None or str(r.get("season")) == str(season))
+            and (season_type is None or str(r.get("season_type")) == str(season_type))]
     calls = [r for r in rows if r["kind"] == "call"]
     picks = [r for r in calls if r.get("selected")]
     games = [r for r in rows if r["kind"] == "game"]
@@ -211,7 +214,13 @@ def report(log, label="Model accuracy"):
     def rate(rs, fn):
         return {"n": len(rs), "correct": sum(bool(fn(r)) for r in rs),
                 "accuracy": mean([bool(fn(r)) for r in rs])}
-    return {"schema": 1, "generated_at": datetime.now(timezone.utc).isoformat(), "label": label,
+    season_type_label = {1: "preseason", 2: "regular season", 3: "postseason"}.get(
+        int(season_type) if season_type is not None else None)
+    return {"schema": 2, "generated_at": datetime.now(timezone.utc).isoformat(), "label": label,
+            "scope": {"season": season, "season_type": season_type,
+                      "season_type_label": season_type_label,
+                      "included_records": len(rows),
+                      "excluded_records": len(all_rows) - len(rows)},
             "method": "First pre-event snapshot, frozen line and price. All model picks, including PASS/AVOID and unstaked picks. One preferred side per event/market in pick statistics; the complete priced-side audit is separate. One hypothetical unit per pick; no actual wagers are created. Missing results remain pending.",
             "overall": call_stats(picks), "all_calls": call_stats(calls),
             "by_tier": buckets(picks, "tier"), "by_market": buckets(picks, "market"),

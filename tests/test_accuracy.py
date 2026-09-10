@@ -100,6 +100,21 @@ class AccuracyTests(unittest.TestCase):
             path.write_text("invalid")
             with self.assertRaises(json.JSONDecodeError):A.load(path)
 
+    def test_report_can_scope_to_current_regular_season(self):
+        log = {"records": {
+            "old": {**call(event_id="old"), "id": "old", "season": 2025,
+                    "season_type": 2, "selected": True, "result": "Loss"},
+            "pre": {**call(event_id="pre"), "id": "pre", "season": 2026,
+                    "season_type": 1, "selected": True, "result": "Win"},
+            "now": {**call(event_id="now"), "id": "now", "season": 2026,
+                    "season_type": 2, "selected": True, "result": "Win"},
+        }}
+        report = A.report(log, season=2026, season_type=2)
+        self.assertEqual(report["overall"]["logged"], 1)
+        self.assertEqual(report["overall"]["wins"], 1)
+        self.assertEqual([row["id"] for row in report["records"]], ["now"])
+        self.assertEqual(report["scope"]["excluded_records"], 2)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -94,7 +94,8 @@ def market_prior() -> dict[str, float]:
     return {t: (float(v) - 8.5) * per for t, v in (wt.get("totals") or {}).items()}
 
 
-def align_to_league(prior: dict[str, float], teams_seen: set[str]) -> dict[str, float]:
+def align_to_league(prior: dict[str, float], teams_seen: set[str],
+                    keep_unseen: bool = False) -> dict[str, float]:
     """
     Reconcile the prior's team codes with the ones the schedule actually uses.
 
@@ -110,7 +111,7 @@ def align_to_league(prior: dict[str, float], teams_seen: set[str]) -> dict[str, 
     for alias, real in aliases.items():
         if alias in teams_seen and real not in teams_seen and real in out:
             out[alias] = out.pop(real)
-    if teams_seen:
+    if teams_seen and not keep_unseen:
         out = {t: v for t, v in out.items() if t in teams_seen}
     return out
 
@@ -218,8 +219,15 @@ def solve_margin_ratings(games: list[dict], cfg: dict,
         return (dict(prior or {}), float(cfg["model"]["home_field_fallback"]))
 
     seen = {g["home"]["abbr"] for g in played} | {g["away"]["abbr"] for g in played}
-    prior = align_to_league(prior or {}, seen)
-    teams = sorted(seen)
+    schedule_seen = ({g.get("home", {}).get("abbr") for g in games}
+                     | {g.get("away", {}).get("abbr") for g in games}) - {None, ""}
+    # A Week 1 solve used to filter the 32-team preseason prior down to only the
+    # clubs that had already played. After the Thursday opener that left two
+    # ratings, so every Sunday matchup looked like two average teams and the
+    # simulator offered only Thursday's participants. Preserve trusted prior
+    # teams and update the ones that have results.
+    prior = align_to_league(prior or {}, schedule_seen or seen, keep_unseen=True)
+    teams = sorted(seen | set(prior))
     idx = {t: i for i, t in enumerate(teams)}
     hfa_col = len(teams)
     n_params = len(teams) + 1

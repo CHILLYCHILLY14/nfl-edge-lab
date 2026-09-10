@@ -444,6 +444,13 @@ class TestRatings(unittest.TestCase):
         solved, _ = R.solve_margin_ratings(self._league(true, 2.0), CFG)
         self.assertAlmostEqual(sum(solved.values()) / len(solved), 0.0, places=6)
 
+    def test_first_final_keeps_unplayed_teams_on_their_prior(self):
+        games = self._league({"KC": 4, "BUF": -4}, 2.0, n_rounds=1)
+        prior = {"KC": 4.0, "BUF": -2.0, "PHI": 3.0, "DAL": -1.0}
+        solved, _ = R.solve_margin_ratings(games, CFG, prior=prior)
+        self.assertEqual(set(solved), set(prior))
+        self.assertNotEqual(solved["PHI"], 0.0)
+
     def test_preseason_games_excluded(self):
         games = self._league({"KC": 5, "BUF": -5}, 2.0, n_rounds=2)
         for g in games:

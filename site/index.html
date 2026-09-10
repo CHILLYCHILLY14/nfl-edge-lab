@@ -309,14 +309,14 @@ const DATA_BASE = (() => {
   return q ? q.replace(/\/?$/, "/") : "./data/";
 })();
 const FILES = ["meta","summary","board","games_detail","games",
-               "performance","ratings","injuries","news","team_stats","weather",
+               "performance","accuracy","ratings","injuries","news","team_stats","weather",
                "simulator","outlook"];
 
 const S = {
   meta:null, summary:null, board:[], games_detail:[], games:[], myLedger:[], staking:null,
-  performance:null, ratings:[], injuries:{}, news:[], team_stats:null, weather:{},
+  performance:null, accuracy:null, ratings:[], injuries:{}, news:[], team_stats:null, weather:{},
   simulator:null, outlook:[],
-  sim:{away:null, home:null, neutral:false, spread:"", total:"",
+  sim:{gameId:null, scheduleKey:null, away:null, home:null, neutral:false, spread:"", total:"",
        adjAway:0, adjHome:0, wxTotal:0},
   tab:"best",
   sel:{week:null, seasonType:null, date:null},
@@ -495,7 +495,7 @@ const TABS = [
   ["power","Power ratings", () => (S.ratings||[]).length],
   ["stats","Team Stats",   () => Object.keys((S.team_stats&&S.team_stats.derived)||{}).length],
   ["news","News",          () => (S.news||[]).length],
-  ["accuracy","Accuracy",  () => (S.performance&&S.performance.settled_calls)||0],
+  ["accuracy","Accuracy",  () => (S.accuracy&&S.accuracy.games&&S.accuracy.games.graded)||0],
   ["ledger","My Ledger",   () => (S.myLedger||[]).length],
   ["settings","Bankroll & Stakes", () => null],
 ];
@@ -1036,6 +1036,23 @@ function renderSim(){
     return;
   }
   const teams = Object.keys(D.teams).sort();
+  const scheduleKey = S.sel.date ? `date:${S.sel.date}` : `week:${selKey()||"all"}`;
+  const scheduled = (S.games||[]).filter(g =>
+    inSelection(g) && D.teams[g.away] && D.teams[g.home]
+  ).sort((a,b) => String(a.date||"").localeCompare(String(b.date||"")));
+  const useGame = g => {
+    if (!g) return;
+    const odds=g.odds||{};
+    S.sim.gameId=g.game_id; S.sim.away=g.away; S.sim.home=g.home;
+    S.sim.neutral=!!g.neutral;
+    S.sim.spread=odds.spread_home==null?"":odds.spread_home;
+    S.sim.total=odds.total==null?"":odds.total;
+    S.sim.adjAway=0; S.sim.adjHome=0; S.sim.wxTotal=0;
+  };
+  if (S.sim.scheduleKey !== scheduleKey){
+    S.sim.scheduleKey = scheduleKey;
+    useGame(scheduled.find(g=>!g.completed) || scheduled[0]);
+  }
   if (!S.sim.away) S.sim.away = teams[0];
   if (!S.sim.home) S.sim.home = teams[1] || teams[0];
 
@@ -1046,6 +1063,14 @@ function renderSim(){
   controls.style.padding = "16px";
   controls.style.marginBottom = "18px";
   controls.innerHTML = `
+    <div style="margin-bottom:14px">
+      <div class="k" style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px">Scheduled matchup</div>
+      <select id="sim-game" style="width:100%">
+        <option value="">Custom matchup</option>
+        ${scheduled.map(g=>`<option value="${esc(g.game_id)}" ${g.game_id===S.sim.gameId?"selected":""}>${esc(fmtDate(g.date))} · ${esc(g.away)} @ ${esc(g.home)}${g.completed?" · Final":""}</option>`).join("")}
+      </select>
+      <div style="font-size:11px;color:var(--ink-3);margin-top:5px">Follows the week or date selected above and loads that game's posted spread and total automatically.</div>
+    </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;align-items:end">
       <div><div class="k" style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px">Away team</div>
         <select id="sim-away" style="width:100%">${opts(S.sim.away)}</select></div>
@@ -1175,10 +1200,15 @@ function renderSim(){
     if (!n) return;
     n.oninput = e => { S.sim[key] = isNum ? e.target.value : e.target.value; renderSimSoft(); };
   };
-  $("#sim-away").onchange = e => { S.sim.away = e.target.value; renderSim(); };
-  $("#sim-home").onchange = e => { S.sim.home = e.target.value; renderSim(); };
+  $("#sim-game").onchange = e => {
+    const game=scheduled.find(g=>g.game_id===e.target.value);
+    if (game) useGame(game); else S.sim.gameId=null;
+    renderSim();
+  };
+  $("#sim-away").onchange = e => { S.sim.gameId=null; S.sim.away = e.target.value; renderSim(); };
+  $("#sim-home").onchange = e => { S.sim.gameId=null; S.sim.home = e.target.value; renderSim(); };
   $("#sim-neutral").onchange = e => { S.sim.neutral = e.target.checked; renderSim(); };
-  $("#sim-swap").onclick = () => { const a = S.sim.away; S.sim.away = S.sim.home; S.sim.home = a; renderSim(); };
+  $("#sim-swap").onclick = () => { S.sim.gameId=null; const a = S.sim.away; S.sim.away = S.sim.home; S.sim.home = a; renderSim(); };
   bind("sim-spread","spread"); bind("sim-total","total");
   bind("sim-adja","adjAway"); bind("sim-adjh","adjHome"); bind("sim-wx","wxTotal");
 }
