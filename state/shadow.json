@@ -915,7 +915,7 @@
   "week": 1
  },
  "401872661:ML:home": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": 0.0143,
   "edge_raw": 0.0146,
@@ -1208,7 +1208,7 @@
   "week": 1
  },
  "401872923:ML:away": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": 0.0113,
   "edge_raw": 0.0115,
@@ -1283,7 +1283,7 @@
   "week": 1
  },
  "401872923:TOTAL:under": {
-  "closing_tier": "PASS",
+  "closing_tier": "GOOD",
   "confidence": 0.5,
   "edge": 0.0381,
   "edge_raw": 0.047,
@@ -2144,7 +2144,7 @@
   "week": 1
  },
  "401872929:ML:away": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": -0.0017,
   "edge_raw": -0.0017,
@@ -2319,7 +2319,7 @@
   "week": 1
  },
  "401872930:ML:home": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": -0.0156,
   "edge_raw": -0.016,
@@ -2369,7 +2369,7 @@
   "week": 1
  },
  "401872930:TOTAL:under": {
-  "closing_tier": "PASS",
+  "closing_tier": "GOOD",
   "confidence": 0.5,
   "edge": -0.0245,
   "edge_raw": -0.0264,
@@ -3219,7 +3219,7 @@
   "week": 2
  },
  "401872936:ML:home": {
-  "closing_tier": "PASS",
+  "closing_tier": "GOOD",
   "confidence": 0.5,
   "edge": 0.0534,
   "edge_raw": 0.1152,
@@ -3944,7 +3944,7 @@
   "week": 2
  },
  "401872941:ML:away": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": 0.0521,
   "edge_raw": 0.0997,
@@ -8744,7 +8744,7 @@
   "week": 4
  },
  "401872973:ML:away": {
-  "closing_tier": "BEST BET",
+  "closing_tier": "GOOD",
   "confidence": 0.5,
   "edge": 0.049,
   "edge_raw": 0.0783,
