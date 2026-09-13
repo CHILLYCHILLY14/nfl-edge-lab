@@ -3386,7 +3386,7 @@
   "week": 2
  },
  "401872938:ML:away": {
-  "closing_tier": "PASS",
+  "closing_tier": "GOOD",
   "confidence": 0.5,
   "edge": 0.0536,
   "edge_raw": 0.1201,
@@ -3836,7 +3836,7 @@
   "week": 2
  },
  "401872941:ML:away": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": 0.0521,
   "edge_raw": 0.0997,
@@ -4361,7 +4361,7 @@
   "week": 2
  },
  "401872944:TOTAL:under": {
-  "closing_tier": "PASS",
+  "closing_tier": "GOOD",
   "confidence": 0.5,
   "edge": 0.0504,
   "edge_raw": 0.086,
@@ -4436,7 +4436,7 @@
   "week": 2
  },
  "401872945:ML:away": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": 0.0549,
   "edge_raw": 0.197,
@@ -5711,7 +5711,7 @@
   "week": 3
  },
  "401872953:TOTAL:under": {
-  "closing_tier": "PASS",
+  "closing_tier": "GOOD",
   "confidence": 0.5,
   "edge": 0.0543,
   "edge_raw": 0.1406,
@@ -5961,7 +5961,7 @@
   "week": 3
  },
  "401872955:ML:home": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": 0.0515,
   "edge_raw": 0.0943,
@@ -6481,6 +6481,56 @@
   "result": "Pending",
   "season_type": 2,
   "side": "under",
+  "tier": "PASS",
+  "units": null,
+  "week": 3
+ },
+ "401872959:ATS:away": {
+  "closing_tier": "PASS",
+  "confidence": 0.5,
+  "edge": -0.0124,
+  "edge_raw": -0.0126,
+  "filtered": null,
+  "first_seen": "2026-09-13T06:37:00+00:00",
+  "game_date": "2026-09-27T20:05Z",
+  "game_id": "401872959",
+  "graded_at": null,
+  "id": "401872959:ATS:away",
+  "line": -1.5,
+  "line_gap": -0.02,
+  "market": "ATS",
+  "matchup": "MIN @ TB",
+  "model_prob": 0.4937,
+  "pick": "MIN +1.5",
+  "price": -110.0,
+  "result": "Pending",
+  "season_type": 2,
+  "side": "away",
+  "tier": "PASS",
+  "units": null,
+  "week": 3
+ },
+ "401872959:ATS:home": {
+  "closing_tier": "PASS",
+  "confidence": 0.5,
+  "edge": 0.0124,
+  "edge_raw": 0.0126,
+  "filtered": null,
+  "first_seen": "2026-09-13T06:37:00+00:00",
+  "game_date": "2026-09-27T20:05Z",
+  "game_id": "401872959",
+  "graded_at": null,
+  "id": "401872959:ATS:home",
+  "line": -1.5,
+  "line_gap": -0.02,
+  "market": "ATS",
+  "matchup": "MIN @ TB",
+  "model_prob": 0.5063,
+  "pick": "TB -1.5",
+  "price": -110.0,
+  "result": "Pending",
+  "season_type": 2,
+  "side": "home",
   "tier": "PASS",
   "units": null,
   "week": 3
