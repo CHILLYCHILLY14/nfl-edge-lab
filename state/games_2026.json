@@ -2311,8 +2311,8 @@
    "book": "Draft Kings",
    "details": "PIT -6",
    "keyless": true,
-   "ml_away": 215.0,
-   "ml_home": -265.0,
+   "ml_away": 230.0,
+   "ml_home": -285.0,
    "over_price": -118.0,
    "priced_markets": [
     "ML",
@@ -2321,10 +2321,10 @@
    ],
    "source": "ESPN public feed",
    "spread_home": -6.0,
-   "spread_price_away": -110.0,
-   "spread_price_home": -110.0,
+   "spread_price_away": -105.0,
+   "spread_price_home": -115.0,
    "total": 40.5,
-   "under_price": -118.0
+   "under_price": -102.0
   },
   "season": 2026,
   "season_type": 2,
@@ -2377,8 +2377,8 @@
    ],
    "source": "ESPN public feed",
    "spread_home": 3.5,
-   "spread_price_away": -105.0,
-   "spread_price_home": -115.0,
+   "spread_price_away": 100.0,
+   "spread_price_home": -120.0,
    "total": 47.5,
    "under_price": -105.0
   },
