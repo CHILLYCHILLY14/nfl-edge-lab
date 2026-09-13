@@ -60,6 +60,9 @@ jobs:
       - name: Browser staking tests
         run: node tests/test_staking.mjs
 
+      - name: Self-test (shared ledger round trip)
+        run: node tests/test_sync.mjs
+
       - name: Run the model
         run: |
           if [ "${{ inputs.full }}" = "true" ]; then
