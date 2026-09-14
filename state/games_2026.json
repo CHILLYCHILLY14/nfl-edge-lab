@@ -3152,7 +3152,7 @@
    "details": "CAR -1.5",
    "keyless": true,
    "ml_away": -125.0,
-   "ml_home": 105.0,
+   "ml_home": 110.0,
    "over_price": -115.0,
    "priced_markets": [
     "ML",
@@ -3161,8 +3161,8 @@
    ],
    "source": "ESPN public feed",
    "spread_home": 1.5,
-   "spread_price_away": -105.0,
-   "spread_price_home": -115.0,
+   "spread_price_away": -110.0,
+   "spread_price_home": -110.0,
    "total": 43.5,
    "under_price": -105.0
   },
@@ -3824,7 +3824,7 @@
    "keyless": true,
    "ml_away": 164.0,
    "ml_home": -198.0,
-   "over_price": -105.0,
+   "over_price": -115.0,
    "priced_markets": [
     "ML",
     "ATS",
@@ -3832,10 +3832,10 @@
    ],
    "source": "ESPN public feed",
    "spread_home": -3.5,
-   "spread_price_away": -105.0,
-   "spread_price_home": -115.0,
-   "total": 51.5,
-   "under_price": -115.0
+   "spread_price_away": -108.0,
+   "spread_price_home": -112.0,
+   "total": 50.5,
+   "under_price": -105.0
   },
   "season": 2026,
   "season_type": 2,
