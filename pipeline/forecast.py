@@ -261,12 +261,16 @@ def _verdict(block: dict) -> str:
     n = block.get("games") or 0
     if not n:
         return "No graded forecasts in the selected season yet."
+    if n < 16:
+        return (f"Only {n} graded game{'s' if n != 1 else ''} so far. "
+                "The sample is too small to infer an advantage; continue collecting frozen pregame results.")
     diff = block.get("margin_vs_market")
     if diff is None:
         return f"{n} games graded, but no matched market spread is available."
     direction = "closer than" if diff > 0 else "farther from the result than"
+    comparison = "The market is predicting these games better on mean margin error. " if diff < -0.25 else ""
     return (
-        f"Across {n} matched games, the model's margin forecast was "
+        comparison + f"Across {n} matched games, the model's margin forecast was "
         f"{abs(diff):.2f} points {direction} the market on average. "
         "This descriptive comparison does not establish a betting edge or profitability. "
         "Keep first and last pregame snapshots separate and collect more out-of-sample results."
