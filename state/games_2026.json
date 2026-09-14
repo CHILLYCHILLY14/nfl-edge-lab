@@ -2454,12 +2454,12 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "away_score": 59,
   "broadcast": "FOX",
-  "completed": false,
+  "completed": true,
   "date_utc": "2026-09-13T17:00Z",
   "game_id": "401872661",
   "home": {
@@ -2468,7 +2468,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "home_score": 37,
@@ -2496,8 +2496,8 @@
   },
   "season": 2026,
   "season_type": 2,
-  "state": "in",
-  "status_detail": "3:40 - 4th",
+  "state": "post",
+  "status_detail": "Final",
   "venue": "Bank of America Stadium",
   "venue_city": "Charlotte",
   "venue_state": "NC",
@@ -2566,12 +2566,12 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
-  "away_score": 24,
+  "away_score": 30,
   "broadcast": "FOX",
-  "completed": false,
+  "completed": true,
   "date_utc": "2026-09-13T17:00Z",
   "game_id": "401872923",
   "home": {
@@ -2580,10 +2580,10 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
-  "home_score": 24,
+  "home_score": 31,
   "indoor": true,
   "name": "NO @ DET",
   "neutral": false,
@@ -2608,8 +2608,8 @@
   },
   "season": 2026,
   "season_type": 2,
-  "state": "in",
-  "status_detail": "7:28 - OT",
+  "state": "post",
+  "status_detail": "Final/OT",
   "venue": "Ford Field",
   "venue_city": "Detroit",
   "venue_state": "MI",
@@ -2734,12 +2734,12 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
-  "away_score": 0,
+  "away_score": 26,
   "broadcast": "CBS",
-  "completed": false,
+  "completed": true,
   "date_utc": "2026-09-13T20:25Z",
   "game_id": "401872926",
   "home": {
@@ -2748,10 +2748,10 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
-  "home_score": 0,
+  "home_score": 14,
   "indoor": false,
   "name": "ARI @ LAC",
   "neutral": false,
@@ -2776,8 +2776,8 @@
   },
   "season": 2026,
   "season_type": 2,
-  "state": "in",
-  "status_detail": "14:18 - 1st",
+  "state": "post",
+  "status_detail": "Final",
   "venue": "SoFi Stadium",
   "venue_city": "Inglewood",
   "venue_state": "CA",
@@ -2790,12 +2790,12 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
-  "away_score": 0,
+  "away_score": 22,
   "broadcast": "CBS",
-  "completed": false,
+  "completed": true,
   "date_utc": "2026-09-13T20:25Z",
   "game_id": "401872927",
   "home": {
@@ -2804,10 +2804,10 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
-  "home_score": 0,
+  "home_score": 39,
   "indoor": true,
   "name": "GB @ MIN",
   "neutral": false,
@@ -2832,8 +2832,8 @@
   },
   "season": 2026,
   "season_type": 2,
-  "state": "in",
-  "status_detail": "14:14 - 1st",
+  "state": "post",
+  "status_detail": "Final",
   "venue": "U.S. Bank Stadium",
   "venue_city": "Minneapolis",
   "venue_state": "MN",
@@ -2846,12 +2846,12 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
-  "away_score": 0,
+  "away_score": 13,
   "broadcast": "FOX",
-  "completed": false,
+  "completed": true,
   "date_utc": "2026-09-13T20:25Z",
   "game_id": "401872928",
   "home": {
@@ -2860,10 +2860,10 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
-  "home_score": 0,
+  "home_score": 27,
   "indoor": true,
   "name": "MIA @ LV",
   "neutral": false,
@@ -2888,8 +2888,8 @@
   },
   "season": 2026,
   "season_type": 2,
-  "state": "in",
-  "status_detail": "14:15 - 1st",
+  "state": "post",
+  "status_detail": "Final",
   "venue": "Allegiant Stadium",
   "venue_city": "Las Vegas",
   "venue_state": "NV",
@@ -2902,12 +2902,12 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
-  "away_score": 0,
+  "away_score": 22,
   "broadcast": "FOX",
-  "completed": false,
+  "completed": true,
   "date_utc": "2026-09-13T20:25Z",
   "game_id": "401872929",
   "home": {
@@ -2916,10 +2916,10 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
-  "home_score": 0,
+  "home_score": 24,
   "indoor": false,
   "name": "WSH @ PHI",
   "neutral": false,
@@ -2944,8 +2944,8 @@
   },
   "season": 2026,
   "season_type": 2,
-  "state": "in",
-  "status_detail": "13:28 - 1st",
+  "state": "post",
+  "status_detail": "Final",
   "venue": "Lincoln Financial Field",
   "venue_city": "Philadelphia",
   "venue_state": "PA",
@@ -3000,8 +3000,8 @@
   },
   "season": 2026,
   "season_type": 2,
-  "state": "pre",
-  "status_detail": "9/13 - 8:20 PM EDT",
+  "state": "in",
+  "status_detail": "9:05 - 1st",
   "venue": "MetLife Stadium",
   "venue_city": "East Rutherford",
   "venue_state": "NJ",
@@ -3070,7 +3070,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "away_score": 0,
@@ -3097,7 +3097,7 @@
    "keyless": true,
    "ml_away": 140.0,
    "ml_home": -166.0,
-   "over_price": -105.0,
+   "over_price": -110.0,
    "priced_markets": [
     "ML",
     "ATS",
@@ -3105,10 +3105,10 @@
    ],
    "source": "ESPN public feed",
    "spread_home": -3.0,
-   "spread_price_away": -105.0,
-   "spread_price_home": -115.0,
-   "total": 52.5,
-   "under_price": -115.0
+   "spread_price_away": 100.0,
+   "spread_price_home": -120.0,
+   "total": 53.5,
+   "under_price": -110.0
   },
   "season": 2026,
   "season_type": 2,
@@ -3126,7 +3126,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "away_score": 0,
@@ -3151,8 +3151,8 @@
    "book": "DraftKings",
    "details": "ATL -1.5",
    "keyless": true,
-   "ml_away": 105.0,
-   "ml_home": -125.0,
+   "ml_away": -102.0,
+   "ml_home": -118.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3163,7 +3163,7 @@
    "spread_home": -1.5,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
-   "total": 42.5,
+   "total": 44.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3207,8 +3207,8 @@
    "book": "DraftKings",
    "details": "HOU -2.5",
    "keyless": true,
-   "ml_away": 124.0,
-   "ml_home": -148.0,
+   "ml_away": 120.0,
+   "ml_home": -142.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3217,9 +3217,9 @@
    ],
    "source": "ESPN public feed",
    "spread_home": -2.5,
-   "spread_price_away": -102.0,
-   "spread_price_home": -118.0,
-   "total": 45.5,
+   "spread_price_away": -105.0,
+   "spread_price_home": -115.0,
+   "total": 47.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3261,10 +3261,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "TB -6.5",
+   "details": "TB -8.5",
    "keyless": true,
-   "ml_away": 225.0,
-   "ml_home": -278.0,
+   "ml_away": 295.0,
+   "ml_home": -375.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3272,10 +3272,10 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -6.5,
+   "spread_home": -8.5,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
-   "total": 42.5,
+   "total": 40.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3294,7 +3294,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "away_score": 0,
@@ -3317,10 +3317,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "GB -5.5",
+   "details": "GB -4.5",
    "keyless": true,
-   "ml_away": -245.0,
-   "ml_home": 200.0,
+   "ml_away": -218.0,
+   "ml_home": 180.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3328,10 +3328,10 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": 5.5,
+   "spread_home": 4.5,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
-   "total": 42.5,
+   "total": 44.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3350,7 +3350,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "away_score": 0,
@@ -3364,7 +3364,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "home_score": 0,
@@ -3373,10 +3373,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "CHI -3",
+   "details": "CHI -5.5",
    "keyless": true,
-   "ml_away": 140.0,
-   "ml_home": -166.0,
+   "ml_away": 215.0,
+   "ml_home": -265.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3384,10 +3384,10 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -3.0,
+   "spread_home": -5.5,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
-   "total": 45.5,
+   "total": 48.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3406,7 +3406,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "away_score": 0,
@@ -3429,21 +3429,20 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "BAL -7.5",
+   "details": "BAL -8.5",
    "keyless": true,
-   "ml_away": 285.0,
-   "ml_home": -360.0,
+   "ml_away": 310.0,
+   "ml_home": -395.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
-    "ATS",
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -7.5,
-   "spread_price_away": -110.0,
+   "spread_home": -8.5,
+   "spread_price_away": null,
    "spread_price_home": -110.0,
-   "total": 46.5,
+   "total": 48.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3462,7 +3461,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "away_score": 0,
@@ -3485,10 +3484,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "PHI -5.5",
+   "details": "PHI -7",
    "keyless": true,
-   "ml_away": -238.0,
-   "ml_home": 195.0,
+   "ml_away": -305.0,
+   "ml_home": 245.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3496,10 +3495,10 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": 5.5,
+   "spread_home": 7.0,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
-   "total": 42.5,
+   "total": 40.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3541,10 +3540,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "NE -4.5",
+   "details": "NE -5.5",
    "keyless": true,
-   "ml_away": 170.0,
-   "ml_home": -205.0,
+   "ml_away": 200.0,
+   "ml_home": -245.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3552,9 +3551,9 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -4.5,
-   "spread_price_away": -115.0,
-   "spread_price_home": -105.0,
+   "spread_home": -5.5,
+   "spread_price_away": -110.0,
+   "spread_price_home": -110.0,
    "total": 43.5,
    "under_price": -110.0
   },
@@ -3597,10 +3596,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "DEN -3",
+   "details": "DEN -2.5",
    "keyless": true,
-   "ml_away": 130.0,
-   "ml_home": -155.0,
+   "ml_away": 120.0,
+   "ml_home": -142.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3608,9 +3607,9 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -3.0,
-   "spread_price_away": -110.0,
-   "spread_price_home": -110.0,
+   "spread_home": -2.5,
+   "spread_price_away": 100.0,
+   "spread_price_home": -120.0,
    "total": 43.5,
    "under_price": -110.0
   },
@@ -3630,7 +3629,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "away_score": 0,
@@ -3644,7 +3643,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "home_score": 0,
@@ -3653,10 +3652,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "LAC -9.5",
+   "details": "LAC -7",
    "keyless": true,
-   "ml_away": 300.0,
-   "ml_home": -380.0,
+   "ml_away": 235.0,
+   "ml_home": -290.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3664,10 +3663,10 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -9.5,
-   "spread_price_away": -110.0,
-   "spread_price_home": -110.0,
-   "total": 42.5,
+   "spread_home": -7.0,
+   "spread_price_away": -115.0,
+   "spread_price_home": -105.0,
+   "total": 45.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3686,7 +3685,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "away_score": 0,
@@ -3709,10 +3708,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "SF -10.5",
+   "details": "SF -12.5",
    "keyless": true,
-   "ml_away": 490.0,
-   "ml_home": -675.0,
+   "ml_away": 625.0,
+   "ml_home": -950.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3720,7 +3719,7 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -10.5,
+   "spread_home": -12.5,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
    "total": 46.5,
@@ -3756,7 +3755,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "home_score": 0,
@@ -3765,10 +3764,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "SEA -10",
+   "details": "SEA -4.5",
    "keyless": true,
-   "ml_away": -550.0,
-   "ml_home": 410.0,
+   "ml_away": -230.0,
+   "ml_home": 190.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3776,10 +3775,10 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": 10.0,
+   "spread_home": 4.5,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
-   "total": 44.5,
+   "total": 42.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3798,7 +3797,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "away_score": 0,
@@ -3823,8 +3822,8 @@
    "book": "DraftKings",
    "details": "DAL -4.5",
    "keyless": true,
-   "ml_away": 164.0,
-   "ml_home": -198.0,
+   "ml_away": 180.0,
+   "ml_home": -218.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3833,9 +3832,9 @@
    ],
    "source": "ESPN public feed",
    "spread_home": -4.5,
-   "spread_price_away": -115.0,
-   "spread_price_home": -105.0,
-   "total": 51.5,
+   "spread_price_away": -110.0,
+   "spread_price_home": -110.0,
+   "total": 50.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3879,8 +3878,8 @@
    "book": "DraftKings",
    "details": "KC -6.5",
    "keyless": true,
-   "ml_away": 230.0,
-   "ml_home": -285.0,
+   "ml_away": 235.0,
+   "ml_home": -290.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3891,7 +3890,7 @@
    "spread_home": -6.5,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
-   "total": 47.5,
+   "total": 48.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3933,10 +3932,10 @@
   "neutral": false,
   "odds": {
    "book": "DraftKings",
-   "details": "LAR -9.5",
+   "details": "LAR -7.5",
    "keyless": true,
-   "ml_away": 370.0,
-   "ml_home": -485.0,
+   "ml_away": 295.0,
+   "ml_home": -375.0,
    "over_price": -110.0,
    "priced_markets": [
     "ML",
@@ -3944,10 +3943,10 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -9.5,
+   "spread_home": -7.5,
    "spread_price_away": -108.0,
    "spread_price_home": -112.0,
-   "total": 48.5,
+   "total": 49.5,
    "under_price": -110.0
   },
   "season": 2026,
@@ -3980,7 +3979,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "home_score": 0,
@@ -4022,7 +4021,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "away_score": 0,
@@ -4204,7 +4203,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "home_score": 0,
@@ -4246,7 +4245,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "away_score": 0,
@@ -4316,7 +4315,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "home_score": 0,
@@ -4372,7 +4371,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "home_score": 0,
@@ -4526,7 +4525,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "away_score": 0,
@@ -4582,7 +4581,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "away_score": 0,
@@ -4694,7 +4693,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "away_score": 0,
@@ -4708,7 +4707,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "home_score": 0,
@@ -4806,7 +4805,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "away_score": 0,
@@ -4820,7 +4819,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "home_score": 0,
@@ -4932,7 +4931,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "home_score": 0,
@@ -4974,7 +4973,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "away_score": 0,
@@ -5086,7 +5085,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "away_score": 0,
@@ -5212,7 +5211,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "home_score": 0,
@@ -5324,7 +5323,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "home_score": 0,
@@ -5422,7 +5421,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "away_score": 0,
@@ -5436,7 +5435,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "home_score": 0,
@@ -5548,7 +5547,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "home_score": 0,
@@ -5590,7 +5589,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "away_score": 0,
@@ -5646,7 +5645,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "away_score": 0,
@@ -5660,7 +5659,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "home_score": 0,
@@ -5716,7 +5715,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "home_score": 0,
@@ -5814,7 +5813,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "away_score": 0,
@@ -5884,7 +5883,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "home_score": 0,
@@ -6094,7 +6093,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "away_score": 0,
@@ -6150,7 +6149,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "away_score": 0,
@@ -6164,7 +6163,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "home_score": 0,
@@ -6220,7 +6219,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "home_score": 0,
@@ -6276,7 +6275,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "home_score": 0,
@@ -6318,7 +6317,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "away_score": 0,
@@ -6332,7 +6331,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "home_score": 0,
@@ -6374,7 +6373,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "away_score": 0,
@@ -6388,7 +6387,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "home_score": 0,
@@ -6766,7 +6765,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "away_score": 0,
@@ -6780,7 +6779,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "home_score": 0,
@@ -6822,7 +6821,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "away_score": 0,
@@ -6878,7 +6877,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "away_score": 0,
@@ -7102,7 +7101,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "away_score": 0,
@@ -7172,7 +7171,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "home_score": 0,
@@ -7214,7 +7213,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "away_score": 0,
@@ -7284,7 +7283,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "home_score": 0,
@@ -7326,7 +7325,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "away_score": 0,
@@ -7396,7 +7395,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "home_score": 0,
@@ -7452,7 +7451,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "home_score": 0,
@@ -7620,7 +7619,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "home_score": 0,
@@ -7662,7 +7661,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "away_score": 0,
@@ -7844,7 +7843,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "home_score": 0,
@@ -7900,7 +7899,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "home_score": 0,
@@ -7942,7 +7941,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "away_score": 0,
@@ -7956,7 +7955,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "home_score": 0,
@@ -8012,7 +8011,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "home_score": 0,
@@ -8124,7 +8123,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "home_score": 0,
@@ -8166,7 +8165,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "away_score": 0,
@@ -8180,7 +8179,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "home_score": 0,
@@ -8222,7 +8221,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "away_score": 0,
@@ -8502,7 +8501,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "away_score": 0,
@@ -8558,7 +8557,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "away_score": 0,
@@ -8572,7 +8571,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "home_score": 0,
@@ -8670,7 +8669,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "away_score": 0,
@@ -8796,7 +8795,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "home_score": 0,
@@ -8838,7 +8837,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "away_score": 0,
@@ -8852,7 +8851,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "home_score": 0,
@@ -8894,7 +8893,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "away_score": 0,
@@ -9076,7 +9075,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "home_score": 0,
@@ -9188,7 +9187,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "home_score": 0,
@@ -9230,7 +9229,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "away_score": 0,
@@ -9244,7 +9243,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "home_score": 0,
@@ -9300,7 +9299,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "home_score": 0,
@@ -9356,7 +9355,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "home_score": 0,
@@ -9468,7 +9467,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "home_score": 0,
@@ -9510,7 +9509,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "away_score": 0,
@@ -9566,7 +9565,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "away_score": 0,
@@ -9622,7 +9621,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "away_score": 0,
@@ -9692,7 +9691,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "home_score": 0,
@@ -9748,7 +9747,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "home_score": 0,
@@ -9790,7 +9789,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "away_score": 0,
@@ -9860,7 +9859,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "home_score": 0,
@@ -9958,7 +9957,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "away_score": 0,
@@ -9972,7 +9971,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "home_score": 0,
@@ -10182,7 +10181,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "away_score": 0,
@@ -10238,7 +10237,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "away_score": 0,
@@ -10252,7 +10251,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "home_score": 0,
@@ -10308,7 +10307,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "home_score": 0,
@@ -10364,7 +10363,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "home_score": 0,
@@ -10518,7 +10517,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "away_score": 0,
@@ -10630,7 +10629,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "away_score": 0,
@@ -10700,7 +10699,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "home_score": 0,
@@ -10798,7 +10797,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "away_score": 0,
@@ -10854,7 +10853,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "away_score": 0,
@@ -10868,7 +10867,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "home_score": 0,
@@ -10924,7 +10923,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "home_score": 0,
@@ -11036,7 +11035,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "home_score": 0,
@@ -11078,7 +11077,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "away_score": 0,
@@ -11148,7 +11147,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "home_score": 0,
@@ -11190,7 +11189,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "away_score": 0,
@@ -11260,7 +11259,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "home_score": 0,
@@ -11302,7 +11301,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "away_score": 0,
@@ -11358,7 +11357,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "away_score": 0,
@@ -11372,7 +11371,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "home_score": 0,
@@ -11414,7 +11413,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "away_score": 0,
@@ -11596,7 +11595,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "home_score": 0,
@@ -11694,7 +11693,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "away_score": 0,
@@ -11750,7 +11749,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "away_score": 0,
@@ -11876,7 +11875,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "home_score": 0,
@@ -12030,7 +12029,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "away_score": 0,
@@ -12044,7 +12043,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "home_score": 0,
@@ -12100,7 +12099,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "home_score": 0,
@@ -12142,7 +12141,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "away_score": 0,
@@ -12366,7 +12365,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "away_score": 0,
@@ -12422,7 +12421,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "away_score": 0,
@@ -12436,7 +12435,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "home_score": 0,
@@ -12492,7 +12491,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "home_score": 0,
@@ -12534,7 +12533,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "away_score": 0,
@@ -12590,7 +12589,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "away_score": 0,
@@ -12646,7 +12645,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "away_score": 0,
@@ -12702,7 +12701,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "away_score": 0,
@@ -12716,7 +12715,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "home_score": 0,
@@ -12814,7 +12813,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "away_score": 0,
@@ -12828,7 +12827,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "home_score": 0,
@@ -12982,7 +12981,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "away_score": 0,
@@ -13094,7 +13093,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "away_score": 0,
@@ -13108,7 +13107,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "home_score": 0,
@@ -13220,7 +13219,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "home_score": 0,
@@ -13276,7 +13275,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "home_score": 0,
@@ -13318,7 +13317,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "away_score": 0,
@@ -13332,7 +13331,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "home_score": 0,
@@ -13444,7 +13443,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "home_score": 0,
@@ -13486,7 +13485,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "away_score": 0,
@@ -13500,7 +13499,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "home_score": 0,
@@ -13724,7 +13723,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "home_score": 0,
@@ -13836,7 +13835,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "home_score": 0,
@@ -13892,7 +13891,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "home_score": 0,
@@ -13934,7 +13933,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "away_score": 0,
@@ -14004,7 +14003,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "home_score": 0,
@@ -14116,7 +14115,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "home_score": 0,
@@ -14326,7 +14325,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "away_score": 0,
@@ -14340,7 +14339,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "home_score": 0,
@@ -14382,7 +14381,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "away_score": 0,
@@ -14452,7 +14451,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "home_score": 0,
@@ -14564,7 +14563,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "home_score": 0,
@@ -14606,7 +14605,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "away_score": 0,
@@ -14620,7 +14619,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "home_score": 0,
@@ -14732,7 +14731,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "home_score": 0,
@@ -14774,7 +14773,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "away_score": 0,
@@ -14788,7 +14787,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "home_score": 0,
@@ -14942,7 +14941,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "away_score": 0,
@@ -15110,7 +15109,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "away_score": 0,
@@ -15124,7 +15123,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "home_score": 0,
@@ -15166,7 +15165,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "away_score": 0,
@@ -15180,7 +15179,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "home_score": 0,
@@ -15278,7 +15277,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "away_score": 0,
@@ -15292,7 +15291,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "home_score": 0,
@@ -15404,7 +15403,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "home_score": 0,
@@ -15572,7 +15571,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "home_score": 0,
@@ -15740,7 +15739,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "home_score": 0,
@@ -15838,7 +15837,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "away_score": 0,
@@ -15908,7 +15907,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "home_score": 0,
@@ -16006,7 +16005,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "away_score": 0,
@@ -16062,7 +16061,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "away_score": 0,
@@ -16244,7 +16243,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "home_score": 0,
@@ -16286,7 +16285,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "away_score": 0,
@@ -16300,7 +16299,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "home_score": 0,
@@ -16342,7 +16341,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "away_score": 0,
@@ -16356,7 +16355,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "home_score": 0,
@@ -16398,7 +16397,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "away_score": 0,
@@ -16467,7 +16466,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "home_score": 0,
@@ -16523,7 +16522,7 @@
    "id": "29",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
    "name": "Carolina Panthers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Panthers"
   },
   "home_score": 0,
@@ -16565,7 +16564,7 @@
    "id": "3",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
    "name": "Chicago Bears",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Bears"
   },
   "away_score": 0,
@@ -16579,7 +16578,7 @@
    "id": "16",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
    "name": "Minnesota Vikings",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Vikings"
   },
   "home_score": 0,
@@ -16691,7 +16690,7 @@
    "id": "28",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
    "name": "Washington Commanders",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Commanders"
   },
   "home_score": 0,
@@ -16733,7 +16732,7 @@
    "id": "8",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
    "name": "Detroit Lions",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Lions"
   },
   "away_score": 0,
@@ -16747,7 +16746,7 @@
    "id": "9",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
    "name": "Green Bay Packers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Packers"
   },
   "home_score": 0,
@@ -16845,7 +16844,7 @@
    "id": "13",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
    "name": "Las Vegas Raiders",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Raiders"
   },
   "away_score": 0,
@@ -16901,7 +16900,7 @@
    "id": "24",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
    "name": "Los Angeles Chargers",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Chargers"
   },
   "away_score": 0,
@@ -16957,7 +16956,7 @@
    "id": "15",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
    "name": "Miami Dolphins",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Dolphins"
   },
   "away_score": 0,
@@ -17069,7 +17068,7 @@
    "id": "21",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
    "name": "Philadelphia Eagles",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Eagles"
   },
   "away_score": 0,
@@ -17195,7 +17194,7 @@
    "id": "22",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
    "name": "Arizona Cardinals",
-   "record": "0-0",
+   "record": "1-0",
    "short": "Cardinals"
   },
   "home_score": 0,
@@ -17307,7 +17306,7 @@
    "id": "18",
    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
    "name": "New Orleans Saints",
-   "record": "0-0",
+   "record": "0-1",
    "short": "Saints"
   },
   "home_score": 0,
