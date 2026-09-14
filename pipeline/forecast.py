@@ -37,6 +37,8 @@ the bets that happened to clear a threshold.
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
+
 from . import store
 
 
@@ -75,6 +77,7 @@ def record(log: dict, game: dict, proj: dict, p_home: float | None) -> bool:
             "date": game.get("date_utc"),
             "week": game.get("week"),
             "season_type": game.get("season_type"),
+            "season": game.get("season"),
             "away": game["away"]["abbr"],
             "home": game["home"]["abbr"],
             "matchup": f'{game["away"]["abbr"]} @ {game["home"]["abbr"]}',
@@ -195,9 +198,30 @@ def _block(rows: list[dict], when: str) -> dict:
     }
 
 
-def report(log: dict) -> dict:
-    """Everything the Accuracy tab needs to say whether the model predicts games."""
-    rows = list(log.values())
+def current_season() -> int:
+    now = datetime.now(timezone.utc)
+    return now.year - (1 if now.month < 3 else 0)
+
+
+def in_scope(row: dict, season: int, season_type: int = 2) -> bool:
+    """Filter reports only; never delete or regrade historical snapshots."""
+    try:
+        if int(row.get("season_type") or 0) != int(season_type):
+            return False
+        saved_season = row.get("season")
+        if saved_season is None:
+            value = row.get("date") or row.get("game_date")
+            when = datetime.fromisoformat(str(value or "").replace("Z", "+00:00"))
+            saved_season = when.year - (1 if when.month < 3 else 0)
+        return int(saved_season) == int(season)
+    except (TypeError, ValueError):
+        return False
+
+
+def report(log: dict, season: int | None = None, season_type: int = 2) -> dict:
+    """Current-season report; archived snapshots remain intact in the log."""
+    season = current_season() if season is None else int(season)
+    rows = [r for r in log.values() if in_scope(r, season, season_type)]
     graded = [r for r in rows if r.get("result") == "Graded"]
     pending = [r for r in rows if r.get("result") == "Pending"]
 
@@ -214,6 +238,8 @@ def report(log: dict) -> dict:
 
     return {
         "generated_at": store.now_iso(),
+        "scope": {"season": season, "season_type": season_type,
+                  "included_records": len(rows), "excluded_records": len(log) - len(rows)},
         "total_games": len(rows),
         "graded": len(graded),
         "pending": len(pending),
@@ -231,29 +257,17 @@ def report(log: dict) -> dict:
 
 
 def _verdict(block: dict) -> str:
-    """One plain sentence, because a table of MAEs does not tell you what to do."""
+    """Describe measured forecast error without claiming profitable wagers."""
     n = block.get("games") or 0
     if not n:
-        return ("No games graded yet. This fills in on its own as results land — every game the "
-                "model priced gets scored, whether or not anything was staked on it.")
-    if n < 16:
-        return (f"Only {n} graded game{'s' if n != 1 else ''} so far. Nothing here means anything "
-                f"until about a full week's slate has been scored, and it does not mean much until "
-                f"there are a few hundred.")
+        return "No graded forecasts in the selected season yet."
     diff = block.get("margin_vs_market")
     if diff is None:
-        return f"{n} games graded, but no market line to compare against."
-    if diff > 0.25:
-        return (f"Across {n} games the model's projected margin has been {diff:.2f} points closer "
-                f"to the final result than the market's spread. That is the case for it having a "
-                f"real edge -- keep watching it, because this is the number that decides "
-                f"everything else.")
-    if diff < -0.25:
-        return (f"Across {n} games the market's spread has been {abs(diff):.2f} points closer to "
-                f"the final result than this model. That is the honest reading: the market is "
-                f"predicting these games better than the model is, and betting into it on the "
-                f"model's disagreement is unlikely to be profitable. Raise the thresholds, or "
-                f"trust the market anchor more.")
-    return (f"Across {n} games the model and the market are predicting final margins about equally "
-            f"well ({diff:+.2f} points). That is a respectable place to be and not, on its own, an "
-            f"edge -- the edge would have to come from the price, not the projection.")
+        return f"{n} games graded, but no matched market spread is available."
+    direction = "closer than" if diff > 0 else "farther from the result than"
+    return (
+        f"Across {n} matched games, the model's margin forecast was "
+        f"{abs(diff):.2f} points {direction} the market on average. "
+        "This descriptive comparison does not establish a betting edge or profitability. "
+        "Keep first and last pregame snapshots separate and collect more out-of-sample results."
+    )

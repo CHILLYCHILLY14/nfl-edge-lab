@@ -907,7 +907,7 @@ def main() -> int:
     games_by_id_all = {g["game_id"]: g for g in games}
     fc_graded = forecast.grade(fc_log, games_by_id_all)
     store.save("forecasts.json", fc_log)
-    fc_report = forecast.report(fc_log)
+    fc_report = forecast.report(fc_log, season=season)
     print(f"   forecasts: +{fc_new} new, {fc_graded} graded, {len(fc_log)} logged"
           + (f" | margin error {fc_report['latest_forecast']['margin_mae']} vs market "
              f"{fc_report['latest_forecast']['market_margin_mae']}"
@@ -951,7 +951,11 @@ def main() -> int:
             json.dump(payload, fh, separators=(",", ":"), default=str)
 
     summary = ledger.summarise(ledg, starting)
-    perf = tracker.report(shadow)
+    scoped_shadow = {k: r for k, r in shadow.items() if forecast.in_scope(r, season)}
+    perf = tracker.report(scoped_shadow)
+    perf["scope"] = {"season": season, "season_type": 2,
+                     "included_records": len(scoped_shadow),
+                     "excluded_records": len(shadow) - len(scoped_shadow)}
 
     write("meta.json", {
         "generated_at": store.now_iso(),
