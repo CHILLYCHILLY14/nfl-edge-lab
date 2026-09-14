@@ -3345,7 +3345,7 @@
   "week": 2
  },
  "401872936:ML:home": {
-  "closing_tier": "GOOD",
+  "closing_tier": "BEST BET",
   "confidence": 0.5,
   "edge": 0.0534,
   "edge_raw": 0.1152,
@@ -3470,7 +3470,7 @@
   "week": 2
  },
  "401872937:ML:away": {
-  "closing_tier": "GOOD",
+  "closing_tier": "PASS",
   "confidence": 0.5,
   "edge": 0.0522,
   "edge_raw": 0.0999,
@@ -4595,7 +4595,7 @@
   "week": 2
  },
  "401872944:TOTAL:under": {
-  "closing_tier": "PASS",
+  "closing_tier": "GOOD",
   "confidence": 0.5,
   "edge": 0.0504,
   "edge_raw": 0.086,
