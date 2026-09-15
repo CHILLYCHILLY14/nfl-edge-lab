@@ -3031,7 +3031,7 @@
    "record": "0-0",
    "short": "Chiefs"
   },
-  "home_score": 0,
+  "home_score": 7,
   "indoor": false,
   "name": "DEN @ KC",
   "neutral": false,
@@ -3057,7 +3057,7 @@
   "season": 2026,
   "season_type": 2,
   "state": "in",
-  "status_detail": "12:20 - 1st",
+  "status_detail": "6:21 - 1st",
   "venue": "Arrowhead Stadium",
   "venue_city": "Kansas City",
   "venue_state": "MO",
@@ -3153,7 +3153,7 @@
    "keyless": true,
    "ml_away": -125.0,
    "ml_home": 105.0,
-   "over_price": -105.0,
+   "over_price": -118.0,
    "priced_markets": [
     "ML",
     "ATS",
@@ -3163,8 +3163,8 @@
    "spread_home": 1.5,
    "spread_price_away": -108.0,
    "spread_price_home": -112.0,
-   "total": 44.5,
-   "under_price": -115.0
+   "total": 43.5,
+   "under_price": -102.0
   },
   "season": 2026,
   "season_type": 2,
@@ -3319,8 +3319,8 @@
    "book": "DraftKings",
    "details": "GB -4.5",
    "keyless": true,
-   "ml_away": -225.0,
-   "ml_home": 185.0,
+   "ml_away": -218.0,
+   "ml_home": 180.0,
    "over_price": -112.0,
    "priced_markets": [
     "ML",
