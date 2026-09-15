@@ -3092,11 +3092,11 @@
   "name": "DET @ BUF",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "BUF -4.5",
    "keyless": true,
-   "ml_away": 170.0,
-   "ml_home": -205.0,
+   "ml_away": 180.0,
+   "ml_home": -218.0,
    "over_price": -115.0,
    "priced_markets": [
     "ML",
@@ -3105,8 +3105,8 @@
    ],
    "source": "ESPN public feed",
    "spread_home": -4.5,
-   "spread_price_away": -112.0,
-   "spread_price_home": -108.0,
+   "spread_price_away": -108.0,
+   "spread_price_home": -112.0,
    "total": 53.5,
    "under_price": -105.0
   },
@@ -3148,23 +3148,23 @@
   "name": "CAR @ ATL",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
-   "details": "CAR -1.5",
+   "book": "DraftKings",
+   "details": "CAR -2.5",
    "keyless": true,
-   "ml_away": -125.0,
-   "ml_home": 105.0,
-   "over_price": -102.0,
+   "ml_away": -142.0,
+   "ml_home": 120.0,
+   "over_price": -118.0,
    "priced_markets": [
     "ML",
     "ATS",
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": 1.5,
-   "spread_price_away": -108.0,
-   "spread_price_home": -112.0,
-   "total": 44.5,
-   "under_price": -118.0
+   "spread_home": 2.5,
+   "spread_price_away": -102.0,
+   "spread_price_home": -118.0,
+   "total": 43.5,
+   "under_price": -102.0
   },
   "season": 2026,
   "season_type": 2,
@@ -3204,11 +3204,11 @@
   "name": "CIN @ HOU",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
-   "details": "HOU -3",
+   "book": "DraftKings",
+   "details": "HOU -2.5",
    "keyless": true,
-   "ml_away": 124.0,
-   "ml_home": -148.0,
+   "ml_away": 120.0,
+   "ml_home": -142.0,
    "over_price": -108.0,
    "priced_markets": [
     "ML",
@@ -3216,9 +3216,9 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -3.0,
-   "spread_price_away": -115.0,
-   "spread_price_home": -105.0,
+   "spread_home": -2.5,
+   "spread_price_away": -105.0,
+   "spread_price_home": -115.0,
    "total": 46.5,
    "under_price": -112.0
   },
@@ -3260,7 +3260,7 @@
   "name": "CLE @ TB",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "TB -8.5",
    "keyless": true,
    "ml_away": 320.0,
@@ -3316,7 +3316,7 @@
   "name": "GB @ NYJ",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "GB -4.5",
    "keyless": true,
    "ml_away": -205.0,
@@ -3329,8 +3329,8 @@
    ],
    "source": "ESPN public feed",
    "spread_home": 4.5,
-   "spread_price_away": -102.0,
-   "spread_price_home": -118.0,
+   "spread_price_away": 100.0,
+   "spread_price_home": -120.0,
    "total": 44.5,
    "under_price": -108.0
   },
@@ -3372,12 +3372,12 @@
   "name": "MIN @ CHI",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "CHI -5.5",
    "keyless": true,
-   "ml_away": 195.0,
-   "ml_home": -238.0,
-   "over_price": -102.0,
+   "ml_away": 185.0,
+   "ml_home": -225.0,
+   "over_price": -110.0,
    "priced_markets": [
     "ML",
     "ATS",
@@ -3387,8 +3387,8 @@
    "spread_home": -5.5,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
-   "total": 49.5,
-   "under_price": -118.0
+   "total": 48.5,
+   "under_price": -110.0
   },
   "season": 2026,
   "season_type": 2,
@@ -3428,7 +3428,7 @@
   "name": "NO @ BAL",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "BAL -8.5",
    "keyless": true,
    "ml_away": 320.0,
@@ -3483,7 +3483,7 @@
   "name": "PHI @ TEN",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "PHI -7",
    "keyless": true,
    "ml_away": -305.0,
@@ -3539,12 +3539,12 @@
   "name": "PIT @ NE",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "NE -5.5",
    "keyless": true,
    "ml_away": 190.0,
    "ml_home": -230.0,
-   "over_price": -105.0,
+   "over_price": -112.0,
    "priced_markets": [
     "ML",
     "ATS",
@@ -3554,8 +3554,8 @@
    "spread_home": -5.5,
    "spread_price_away": -110.0,
    "spread_price_home": -110.0,
-   "total": 42.5,
-   "under_price": -115.0
+   "total": 41.5,
+   "under_price": -108.0
   },
   "season": 2026,
   "season_type": 2,
@@ -3595,7 +3595,7 @@
   "name": "JAX @ DEN",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "DEN -2.5",
    "keyless": true,
    "ml_away": 114.0,
@@ -3651,7 +3651,7 @@
   "name": "LV @ LAC",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "LAC -7",
    "keyless": true,
    "ml_away": 250.0,
@@ -3707,8 +3707,8 @@
   "name": "MIA @ SF",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
-   "details": "SF -13.5",
+   "book": "DraftKings",
+   "details": "SF -12.5",
    "keyless": true,
    "ml_away": 625.0,
    "ml_home": -950.0,
@@ -3719,9 +3719,9 @@
     "TOTAL"
    ],
    "source": "ESPN public feed",
-   "spread_home": -13.5,
-   "spread_price_away": -115.0,
-   "spread_price_home": -105.0,
+   "spread_home": -12.5,
+   "spread_price_away": -105.0,
+   "spread_price_home": -115.0,
    "total": 45.5,
    "under_price": -112.0
   },
@@ -3763,7 +3763,7 @@
   "name": "SEA @ ARI",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "SEA -4.5",
    "keyless": true,
    "ml_away": -225.0,
@@ -3819,7 +3819,7 @@
   "name": "WSH @ DAL",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "DAL -3.5",
    "keyless": true,
    "ml_away": 185.0,
@@ -3875,7 +3875,7 @@
   "name": "IND @ KC",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "KC -6.5",
    "keyless": true,
    "ml_away": 245.0,
@@ -3931,7 +3931,7 @@
   "name": "NYG @ LAR",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "LAR -7",
    "keyless": true,
    "ml_away": 280.0,
@@ -3987,7 +3987,7 @@
   "name": "ATL @ GB",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "GB -7.5",
    "keyless": true,
    "ml_away": 295.0,
@@ -4043,7 +4043,7 @@
   "name": "CAR @ CLE",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "CAR -1.5",
    "keyless": true,
    "ml_away": -125.0,
@@ -4099,7 +4099,7 @@
   "name": "CIN @ PIT",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "CIN -1.5",
    "keyless": true,
    "ml_away": -125.0,
@@ -4155,7 +4155,7 @@
   "name": "HOU @ IND",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "HOU -1.5",
    "keyless": true,
    "ml_away": -125.0,
@@ -4211,7 +4211,7 @@
   "name": "KC @ MIA",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "KC -7.5",
    "keyless": true,
    "ml_away": -395.0,
@@ -4267,7 +4267,7 @@
   "name": "LAC @ BUF",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "BUF -3",
    "keyless": true,
    "ml_away": 136.0,
@@ -4323,7 +4323,7 @@
   "name": "NYJ @ DET",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "DET -9.5",
    "keyless": true,
    "ml_away": 320.0,
@@ -4379,7 +4379,7 @@
   "name": "SEA @ WSH",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "SEA -3.5",
    "keyless": true,
    "ml_away": -185.0,
@@ -4435,7 +4435,7 @@
   "name": "TEN @ NYG",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "NYG -3",
    "keyless": true,
    "ml_away": 140.0,
@@ -4491,7 +4491,7 @@
   "name": "NE @ JAX",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "JAX -1.5",
    "keyless": true,
    "ml_away": -102.0,
@@ -4547,7 +4547,7 @@
   "name": "ARI @ SF",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "SF -11.5",
    "keyless": true,
    "ml_away": 470.0,
@@ -4603,7 +4603,7 @@
   "name": "MIN @ TB",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "TB -1.5",
    "keyless": true,
    "ml_away": 110.0,
@@ -4659,7 +4659,7 @@
   "name": "BAL VS DAL",
   "neutral": true,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "BAL -2.5",
    "keyless": true,
    "ml_away": -135.0,
@@ -4715,7 +4715,7 @@
   "name": "LV @ NO",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "NO -3.5",
    "keyless": true,
    "ml_away": 154.0,
@@ -4771,7 +4771,7 @@
   "name": "LAR @ DEN",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "LAR -3",
    "keyless": true,
    "ml_away": -155.0,
@@ -4827,7 +4827,7 @@
   "name": "PHI @ CHI",
   "neutral": false,
   "odds": {
-   "book": "Draft Kings",
+   "book": "DraftKings",
    "details": "CHI -1.5",
    "keyless": true,
    "ml_away": -102.0,

@@ -884,17 +884,17 @@
   "latest": {
    "market_spread": -4.5,
    "market_total": 53.5,
-   "model_margin": 3.44,
-   "model_margin_raw": 2.5,
-   "model_total": 50.8,
-   "p_home": 0.613,
+   "model_margin": 3.85,
+   "model_margin_raw": 3.3,
+   "model_total": 50.9,
+   "p_home": 0.6247,
    "score_away": 24,
    "score_home": 27,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "DET @ BUF",
   "result": "Pending",
-  "runs": 168,
+  "runs": 169,
   "season_type": 2,
   "week": 2
  },
@@ -915,19 +915,19 @@
   "game_id": "401872933",
   "home": "ATL",
   "latest": {
-   "market_spread": 1.5,
-   "market_total": 44.5,
-   "model_margin": -0.2,
-   "model_margin_raw": 0.99,
-   "model_total": 46.4,
-   "p_home": 0.485,
+   "market_spread": 2.5,
+   "market_total": 43.5,
+   "model_margin": -0.6,
+   "model_margin_raw": 1.43,
+   "model_total": 46.0,
+   "p_home": 0.4668,
    "score_away": 23,
    "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "CAR @ ATL",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -948,19 +948,19 @@
   "game_id": "401872934",
   "home": "HOU",
   "latest": {
-   "market_spread": -3.0,
+   "market_spread": -2.5,
    "market_total": 46.5,
-   "model_margin": 2.04,
-   "model_margin_raw": 1.19,
+   "model_margin": 1.57,
+   "model_margin_raw": 0.75,
    "model_total": 47.6,
-   "p_home": 0.5624,
+   "p_home": 0.5509,
    "score_away": 23,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "CIN @ HOU",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -983,17 +983,17 @@
   "latest": {
    "market_spread": -8.5,
    "market_total": 40.5,
-   "model_margin": 6.35,
-   "model_margin_raw": 3.83,
-   "model_total": 43.2,
-   "p_home": 0.7076,
-   "score_away": 18,
+   "model_margin": 6.58,
+   "model_margin_raw": 4.51,
+   "model_total": 43.6,
+   "p_home": 0.7114,
+   "score_away": 19,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "CLE @ TB",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1016,17 +1016,17 @@
   "latest": {
    "market_spread": 4.5,
    "market_total": 44.5,
-   "model_margin": -2.16,
-   "model_margin_raw": 0.81,
-   "model_total": 45.1,
-   "p_home": 0.41,
-   "score_away": 24,
+   "model_margin": -2.08,
+   "model_margin_raw": 1.13,
+   "model_total": 44.7,
+   "p_home": 0.4114,
+   "score_away": 23,
    "score_home": 21,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "GB @ NYJ",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1048,18 +1048,18 @@
   "home": "CHI",
   "latest": {
    "market_spread": -5.5,
-   "market_total": 49.5,
-   "model_margin": 3.67,
-   "model_margin_raw": 1.75,
-   "model_total": 49.4,
-   "p_home": 0.6277,
+   "market_total": 48.5,
+   "model_margin": 4.02,
+   "model_margin_raw": 2.59,
+   "model_total": 49.2,
+   "p_home": 0.6299,
    "score_away": 23,
    "score_home": 27,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "MIN @ CHI",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1082,17 +1082,17 @@
   "latest": {
    "market_spread": -8.5,
    "market_total": 46.5,
-   "model_margin": 6.62,
-   "model_margin_raw": 4.62,
-   "model_total": 47.0,
-   "p_home": 0.7121,
+   "model_margin": 6.61,
+   "model_margin_raw": 4.58,
+   "model_total": 47.4,
+   "p_home": 0.7119,
    "score_away": 20,
    "score_home": 27,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "NO @ BAL",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1121,11 +1121,11 @@
    "p_home": 0.3414,
    "score_away": 24,
    "score_home": 19,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "PHI @ TEN",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1148,17 +1148,17 @@
   "latest": {
    "market_spread": -2.5,
    "market_total": 44.5,
-   "model_margin": 0.04,
-   "model_margin_raw": -3.29,
-   "model_total": 44.6,
-   "p_home": 0.5187,
+   "model_margin": 0.89,
+   "model_margin_raw": -0.69,
+   "model_total": 45.2,
+   "p_home": 0.5343,
    "score_away": 22,
-   "score_home": 22,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "score_home": 23,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "JAX @ DEN",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1181,17 +1181,17 @@
   "latest": {
    "market_spread": -7.0,
    "market_total": 43.5,
-   "model_margin": 4.54,
-   "model_margin_raw": 1.23,
-   "model_total": 43.6,
-   "p_home": 0.6607,
+   "model_margin": 4.56,
+   "model_margin_raw": 1.31,
+   "model_total": 43.7,
+   "p_home": 0.6611,
    "score_away": 20,
    "score_home": 24,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "LV @ LAC",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1212,19 +1212,19 @@
   "game_id": "401872942",
   "home": "SF",
   "latest": {
-   "market_spread": -13.5,
+   "market_spread": -12.5,
    "market_total": 45.5,
-   "model_margin": 10.82,
+   "model_margin": 10.03,
    "model_margin_raw": 6.69,
    "model_total": 45.9,
-   "p_home": 0.8099,
+   "p_home": 0.7987,
    "score_away": 18,
    "score_home": 28,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "MIA @ SF",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1247,17 +1247,17 @@
   "latest": {
    "market_spread": 4.5,
    "market_total": 41.5,
-   "model_margin": -2.41,
-   "model_margin_raw": -0.02,
-   "model_total": 42.8,
-   "p_home": 0.3989,
+   "model_margin": -2.43,
+   "model_margin_raw": -0.06,
+   "model_total": 43.0,
+   "p_home": 0.3985,
    "score_away": 23,
    "score_home": 20,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "SEA @ ARI",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1286,11 +1286,11 @@
    "p_home": 0.5963,
    "score_away": 23,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "WSH @ DAL",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1313,17 +1313,17 @@
   "latest": {
    "market_spread": -6.5,
    "market_total": 47.5,
-   "model_margin": 5.01,
-   "model_margin_raw": 3.58,
-   "model_total": 46.3,
-   "p_home": 0.6676,
-   "score_away": 21,
-   "score_home": 26,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "model_margin": 6.41,
+   "model_margin_raw": 6.33,
+   "model_total": 46.9,
+   "p_home": 0.6913,
+   "score_away": 20,
+   "score_home": 27,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "IND @ KC",
   "result": "Pending",
-  "runs": 155,
+  "runs": 156,
   "season_type": 2,
   "week": 2
  },
@@ -1345,18 +1345,18 @@
   "home": "NE",
   "latest": {
    "market_spread": -5.5,
-   "market_total": 42.5,
-   "model_margin": 3.97,
-   "model_margin_raw": 2.5,
-   "model_total": 42.9,
-   "p_home": 0.6309,
+   "market_total": 41.5,
+   "model_margin": 4.17,
+   "model_margin_raw": 2.94,
+   "model_total": 42.1,
+   "p_home": 0.6344,
    "score_away": 19,
    "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "PIT @ NE",
   "result": "Pending",
-  "runs": 156,
+  "runs": 157,
   "season_type": 2,
   "week": 2
  },
@@ -1385,11 +1385,11 @@
    "p_home": 0.6742,
    "score_away": 21,
    "score_home": 26,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "NYG @ LAR",
   "result": "Pending",
-  "runs": 150,
+  "runs": 151,
   "season_type": 2,
   "week": 2
  },
@@ -1412,17 +1412,17 @@
   "latest": {
    "market_spread": -7.5,
    "market_total": 46.5,
-   "model_margin": 5.37,
-   "model_margin_raw": 2.88,
-   "model_total": 43.9,
-   "p_home": 0.686,
-   "score_away": 19,
+   "model_margin": 5.45,
+   "model_margin_raw": 3.13,
+   "model_total": 45.4,
+   "p_home": 0.6874,
+   "score_away": 20,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "ATL @ GB",
   "result": "Pending",
-  "runs": 135,
+  "runs": 136,
   "season_type": 2,
   "week": 3
  },
@@ -1445,17 +1445,17 @@
   "latest": {
    "market_spread": 1.5,
    "market_total": 39.5,
-   "model_margin": -1.23,
-   "model_margin_raw": -1.0,
-   "model_total": 43.5,
-   "p_home": 0.4662,
+   "model_margin": -0.99,
+   "model_margin_raw": -0.56,
+   "model_total": 43.6,
+   "p_home": 0.4706,
    "score_away": 22,
    "score_home": 21,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "CAR @ CLE",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1478,17 +1478,17 @@
   "latest": {
    "market_spread": 1.5,
    "market_total": 46.5,
-   "model_margin": 0.02,
-   "model_margin_raw": 1.49,
+   "model_margin": 0.0,
+   "model_margin_raw": 1.45,
    "model_total": 46.3,
-   "p_home": 0.489,
+   "p_home": 0.4886,
    "score_away": 23,
    "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "CIN @ PIT",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1511,17 +1511,17 @@
   "latest": {
    "market_spread": 1.5,
    "market_total": 45.5,
-   "model_margin": -0.35,
-   "model_margin_raw": 0.69,
+   "model_margin": -0.21,
+   "model_margin_raw": 0.97,
    "model_total": 46.6,
-   "p_home": 0.4822,
+   "p_home": 0.4848,
    "score_away": 23,
    "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "HOU @ IND",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1544,17 +1544,17 @@
   "latest": {
    "market_spread": 7.5,
    "market_total": 44.5,
-   "model_margin": -4.51,
-   "model_margin_raw": 1.51,
-   "model_total": 45.2,
-   "p_home": 0.3258,
+   "model_margin": -4.99,
+   "model_margin_raw": -1.51,
+   "model_total": 45.7,
+   "p_home": 0.3174,
    "score_away": 25,
    "score_home": 20,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "KC @ MIA",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1577,17 +1577,17 @@
   "latest": {
    "market_spread": -3.0,
    "market_total": 48.5,
-   "model_margin": 4.17,
-   "model_margin_raw": 5.23,
-   "model_total": 47.4,
-   "p_home": 0.6079,
+   "model_margin": 4.36,
+   "model_margin_raw": 5.63,
+   "model_total": 47.5,
+   "p_home": 0.6112,
    "score_away": 22,
    "score_home": 26,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "LAC @ BUF",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1610,17 +1610,17 @@
   "latest": {
    "market_spread": -9.5,
    "market_total": 45.5,
-   "model_margin": 7.17,
-   "model_margin_raw": 4.24,
-   "model_total": 46.0,
-   "p_home": 0.7211,
-   "score_away": 19,
-   "score_home": 27,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "model_margin": 6.87,
+   "model_margin_raw": 2.96,
+   "model_total": 46.1,
+   "p_home": 0.7162,
+   "score_away": 20,
+   "score_home": 26,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "NYJ @ DET",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1643,17 +1643,17 @@
   "latest": {
    "market_spread": 3.5,
    "market_total": 46.5,
-   "model_margin": -0.78,
-   "model_margin_raw": 3.55,
-   "model_total": 46.0,
-   "p_home": 0.4429,
-   "score_away": 23,
+   "model_margin": -0.98,
+   "model_margin_raw": 2.55,
+   "model_total": 46.2,
+   "p_home": 0.4392,
+   "score_away": 24,
    "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "SEA @ WSH",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1676,17 +1676,17 @@
   "latest": {
    "market_spread": -3.0,
    "market_total": 44.5,
-   "model_margin": 4.48,
-   "model_margin_raw": 5.9,
+   "model_margin": 4.36,
+   "model_margin_raw": 5.62,
    "model_total": 45.8,
-   "p_home": 0.6155,
+   "p_home": 0.6134,
    "score_away": 21,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "TEN @ NYG",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1709,17 +1709,17 @@
   "latest": {
    "market_spread": -1.5,
    "market_total": 45.5,
-   "model_margin": 2.96,
-   "model_margin_raw": 4.35,
-   "model_total": 43.9,
-   "p_home": 0.5598,
-   "score_away": 20,
-   "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "model_margin": 2.57,
+   "model_margin_raw": 3.51,
+   "model_total": 44.7,
+   "p_home": 0.5528,
+   "score_away": 21,
+   "score_home": 24,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "NE @ JAX",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1742,17 +1742,17 @@
   "latest": {
    "market_spread": -11.5,
    "market_total": 46.5,
-   "model_margin": 9.18,
-   "model_margin_raw": 6.26,
-   "model_total": 45.5,
-   "p_home": 0.7736,
+   "model_margin": 8.94,
+   "model_margin_raw": 5.3,
+   "model_total": 45.6,
+   "p_home": 0.7699,
    "score_away": 18,
    "score_home": 27,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "ARI @ SF",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1775,17 +1775,17 @@
   "latest": {
    "market_spread": -1.5,
    "market_total": 44.5,
-   "model_margin": 0.45,
-   "model_margin_raw": -0.48,
-   "model_total": 45.5,
-   "p_home": 0.5232,
-   "score_away": 23,
-   "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "model_margin": 1.18,
+   "model_margin_raw": 0.92,
+   "model_total": 45.9,
+   "p_home": 0.5365,
+   "score_away": 22,
+   "score_home": 24,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "MIN @ TB",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1808,17 +1808,17 @@
   "latest": {
    "market_spread": 2.5,
    "market_total": 51.5,
-   "model_margin": -1.2,
-   "model_margin_raw": -0.01,
-   "model_total": 47.9,
-   "p_home": 0.4601,
+   "model_margin": -1.78,
+   "model_margin_raw": -1.17,
+   "model_total": 48.0,
+   "p_home": 0.4495,
    "score_away": 25,
    "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "BAL @ DAL",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1841,17 +1841,17 @@
   "latest": {
    "market_spread": -3.5,
    "market_total": 42.5,
-   "model_margin": 2.57,
-   "model_margin_raw": 1.77,
-   "model_total": 44.4,
-   "p_home": 0.5896,
+   "model_margin": 3.03,
+   "model_margin_raw": 2.65,
+   "model_total": 44.7,
+   "p_home": 0.5979,
    "score_away": 21,
-   "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "score_home": 24,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "LV @ NO",
   "result": "Pending",
-  "runs": 125,
+  "runs": 126,
   "season_type": 2,
   "week": 3
  },
@@ -1874,17 +1874,17 @@
   "latest": {
    "market_spread": 3.0,
    "market_total": 45.5,
-   "model_margin": -2.68,
-   "model_margin_raw": -2.41,
-   "model_total": 45.1,
-   "p_home": 0.4222,
+   "model_margin": -1.39,
+   "model_margin_raw": 0.19,
+   "model_total": 45.7,
+   "p_home": 0.4456,
    "score_away": 24,
-   "score_home": 21,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "score_home": 22,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "LAR @ DEN",
   "result": "Pending",
-  "runs": 117,
+  "runs": 118,
   "season_type": 2,
   "week": 3
  },
@@ -1907,17 +1907,17 @@
   "latest": {
    "market_spread": -1.5,
    "market_total": 46.5,
-   "model_margin": 1.94,
-   "model_margin_raw": 2.3,
-   "model_total": 48.2,
-   "p_home": 0.5414,
+   "model_margin": 2.23,
+   "model_margin_raw": 2.86,
+   "model_total": 48.4,
+   "p_home": 0.5467,
    "score_away": 23,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "PHI @ CHI",
   "result": "Pending",
-  "runs": 112,
+  "runs": 113,
   "season_type": 2,
   "week": 3
  },
@@ -1940,17 +1940,17 @@
   "latest": {
    "market_spread": 2.5,
    "market_total": 40.5,
-   "model_margin": -1.9,
-   "model_margin_raw": -1.4,
-   "model_total": 42.5,
-   "p_home": 0.4474,
+   "model_margin": -1.73,
+   "model_margin_raw": -1.08,
+   "model_total": 42.7,
+   "p_home": 0.4504,
    "score_away": 22,
    "score_home": 20,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "PIT @ CLE",
   "result": "Pending",
-  "runs": 82,
+  "runs": 83,
   "season_type": 2,
   "week": 4
  },
@@ -1973,17 +1973,17 @@
   "latest": {
    "market_spread": -1.5,
    "market_total": 50.5,
-   "model_margin": 2.29,
-   "model_margin_raw": 2.96,
+   "model_margin": 2.14,
+   "model_margin_raw": 2.68,
    "model_total": 48.1,
-   "p_home": 0.5478,
+   "p_home": 0.5451,
    "score_away": 23,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "IND @ WSH",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2006,17 +2006,17 @@
   "latest": {
    "market_spread": -7.0,
    "market_total": 45.5,
-   "model_margin": 6.44,
-   "model_margin_raw": 5.97,
-   "model_total": 46.2,
-   "p_home": 0.6958,
+   "model_margin": 5.94,
+   "model_margin_raw": 5.01,
+   "model_total": 46.3,
+   "p_home": 0.6874,
    "score_away": 20,
    "score_home": 26,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "ARI @ NYG",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2045,11 +2045,11 @@
    "p_home": 0.5559,
    "score_away": 23,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "DAL @ HOU",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2072,17 +2072,17 @@
   "latest": {
    "market_spread": 1.5,
    "market_total": 47.5,
-   "model_margin": -0.13,
-   "model_margin_raw": 1.16,
-   "model_total": 47.3,
-   "p_home": 0.4863,
+   "model_margin": 0.07,
+   "model_margin_raw": 1.6,
+   "model_total": 47.9,
+   "p_home": 0.4899,
    "score_away": 24,
    "score_home": 24,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "GB @ TB",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2105,17 +2105,17 @@
   "latest": {
    "market_spread": -2.5,
    "market_total": 51.5,
-   "model_margin": 1.59,
-   "model_margin_raw": 0.8,
+   "model_margin": 1.82,
+   "model_margin_raw": 1.24,
    "model_total": 49.3,
-   "p_home": 0.547,
+   "p_home": 0.5512,
    "score_away": 24,
-   "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "score_home": 26,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "JAX @ CIN",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2138,17 +2138,17 @@
   "latest": {
    "market_spread": 1.5,
    "market_total": 47.5,
-   "model_margin": 0.62,
-   "model_margin_raw": 3.08,
+   "model_margin": 0.71,
+   "model_margin_raw": 3.36,
    "model_total": 46.8,
-   "p_home": 0.5022,
+   "p_home": 0.5038,
    "score_away": 23,
    "score_home": 24,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "LAR @ PHI",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2171,17 +2171,17 @@
   "latest": {
    "market_spread": -3.0,
    "market_total": 49.5,
-   "model_margin": 2.82,
-   "model_margin_raw": 2.67,
-   "model_total": 47.0,
-   "p_home": 0.5839,
+   "model_margin": 2.8,
+   "model_margin_raw": 2.63,
+   "model_total": 47.4,
+   "p_home": 0.5836,
    "score_away": 22,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "NE @ BUF",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2204,17 +2204,17 @@
   "latest": {
    "market_spread": -8.5,
    "market_total": 45.5,
-   "model_margin": 6.75,
-   "model_margin_raw": 4.95,
-   "model_total": 47.3,
-   "p_home": 0.7142,
-   "score_away": 20,
+   "model_margin": 6.58,
+   "model_margin_raw": 4.51,
+   "model_total": 47.6,
+   "p_home": 0.7114,
+   "score_away": 21,
    "score_home": 27,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "NYJ @ CHI",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2237,17 +2237,17 @@
   "latest": {
    "market_spread": -8.5,
    "market_total": 47.5,
-   "model_margin": 6.64,
-   "model_margin_raw": 4.67,
-   "model_total": 47.1,
-   "p_home": 0.7084,
+   "model_margin": 7.0,
+   "model_margin_raw": 5.55,
+   "model_total": 47.2,
+   "p_home": 0.7143,
    "score_away": 20,
    "score_home": 27,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "TEN @ BAL",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2276,11 +2276,11 @@
    "p_home": 0.7049,
    "score_away": 20,
    "score_home": 26,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "MIA @ MIN",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2303,17 +2303,17 @@
   "latest": {
    "market_spread": -2.5,
    "market_total": 46.5,
-   "model_margin": 4.99,
-   "model_margin_raw": 8.38,
-   "model_total": 45.3,
-   "p_home": 0.6117,
-   "score_away": 20,
+   "model_margin": 4.14,
+   "model_margin_raw": 5.78,
+   "model_total": 45.8,
+   "p_home": 0.5969,
+   "score_away": 21,
    "score_home": 25,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "DEN @ SF",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2336,17 +2336,17 @@
   "latest": {
    "market_spread": 5.5,
    "market_total": 43.5,
-   "model_margin": -2.71,
-   "model_margin_raw": 1.91,
-   "model_total": 43.7,
-   "p_home": 0.3916,
-   "score_away": 23,
-   "score_home": 20,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "model_margin": -3.34,
+   "model_margin_raw": -0.8,
+   "model_total": 44.4,
+   "p_home": 0.3803,
+   "score_away": 24,
+   "score_home": 21,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "KC @ LV",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2369,17 +2369,17 @@
   "latest": {
    "market_spread": -3.0,
    "market_total": 45.5,
-   "model_margin": 3.72,
-   "model_margin_raw": 4.34,
-   "model_total": 44.7,
-   "p_home": 0.6055,
+   "model_margin": 4.03,
+   "model_margin_raw": 4.94,
+   "model_total": 44.8,
+   "p_home": 0.611,
    "score_away": 20,
    "score_home": 24,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "LAC @ SEA",
   "result": "Pending",
-  "runs": 70,
+  "runs": 71,
   "season_type": 2,
   "week": 4
  },
@@ -2402,17 +2402,17 @@
   "latest": {
    "market_spread": 3.0,
    "market_total": 47.5,
-   "model_margin": -1.01,
-   "model_margin_raw": 1.2,
+   "model_margin": -0.91,
+   "model_margin_raw": 1.48,
    "model_total": 49.3,
-   "p_home": 0.4489,
+   "p_home": 0.4507,
    "score_away": 25,
    "score_home": 24,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "DET @ CAR",
   "result": "Pending",
-  "runs": 56,
+  "runs": 57,
   "season_type": 2,
   "week": 4
  },
@@ -2435,17 +2435,17 @@
   "latest": {
    "market_spread": -2.5,
    "market_total": 45.5,
-   "model_margin": 1.86,
-   "model_margin_raw": 1.33,
-   "model_total": 45.0,
-   "p_home": 0.5519,
+   "model_margin": 2.12,
+   "model_margin_raw": 1.81,
+   "model_total": 45.4,
+   "p_home": 0.5566,
    "score_away": 22,
-   "score_home": 23,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "score_home": 24,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "ATL @ NO",
   "result": "Pending",
-  "runs": 44,
+  "runs": 45,
   "season_type": 2,
   "week": 4
  },
@@ -2468,17 +2468,17 @@
   "latest": {
    "market_spread": -3.5,
    "market_total": 52.5,
-   "model_margin": 3.79,
-   "model_margin_raw": 4.03,
-   "model_total": 49.5,
-   "p_home": 0.6192,
+   "model_margin": 3.02,
+   "model_margin_raw": 2.63,
+   "model_total": 49.8,
+   "p_home": 0.6055,
    "score_away": 23,
-   "score_home": 27,
-   "ts": "2026-09-15T12:34:01+00:00"
+   "score_home": 26,
+   "ts": "2026-09-15T16:30:54+00:00"
   },
   "matchup": "TB @ DAL",
   "result": "Pending",
-  "runs": 4,
+  "runs": 5,
   "season": 2026,
   "season_type": 2,
   "week": 5
