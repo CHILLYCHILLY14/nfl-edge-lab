@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generated_at": "2026-09-15T04:30:30.251609+00:00",
+ "generated_at": "2026-09-15T08:32:25.633361+00:00",
  "label": "NFL prediction accuracy",
  "scope": {
   "season": 2026,
@@ -12,29 +12,29 @@
  "method": "First pre-event snapshot, frozen line and price. All model picks, including PASS/AVOID and unstaked picks. One preferred side per event/market in pick statistics; the complete priced-side audit is separate. One hypothetical unit per pick; no actual wagers are created. Missing results remain pending.",
  "overall": {
   "logged": 195,
-  "wins": 16,
-  "losses": 29,
+  "wins": 18,
+  "losses": 30,
   "pushes": 0,
   "voids": 0,
-  "settled": 45,
-  "pending": 150,
-  "win_rate": 0.35555555555555557,
-  "units": -10.048,
-  "roi": -0.22328686666666664,
-  "brier": 0.2445
+  "settled": 48,
+  "pending": 147,
+  "win_rate": 0.375,
+  "units": -9.186,
+  "roi": -0.19138410416666662,
+  "brier": 0.24293
  },
  "all_calls": {
   "logged": 390,
-  "wins": 45,
-  "losses": 45,
+  "wins": 48,
+  "losses": 48,
   "pushes": 0,
   "voids": 0,
-  "settled": 90,
-  "pending": 300,
+  "settled": 96,
+  "pending": 294,
   "win_rate": 0.5,
-  "units": -3.429,
-  "roi": -0.038098266666666616,
-  "brier": 0.2445
+  "units": -3.922,
+  "roi": -0.0408563645833333,
+  "brier": 0.24293
  },
  "by_tier": {
   "GOOD": {
@@ -65,57 +65,57 @@
   },
   "PASS": {
    "logged": 175,
-   "wins": 16,
-   "losses": 28,
+   "wins": 18,
+   "losses": 29,
    "pushes": 0,
    "voids": 0,
-   "settled": 44,
-   "pending": 131,
-   "win_rate": 0.36363636363636365,
-   "units": -9.048,
-   "roi": -0.20563429545454542,
-   "brier": 0.24198
+   "settled": 47,
+   "pending": 128,
+   "win_rate": 0.3829787234042553,
+   "units": -8.186,
+   "roi": -0.17417951063829784,
+   "brier": 0.24054
   }
  },
  "by_market": {
   "ATS": {
    "logged": 65,
-   "wins": 6,
+   "wins": 7,
    "losses": 9,
    "pushes": 0,
    "voids": 0,
-   "settled": 15,
-   "pending": 50,
-   "win_rate": 0.4,
-   "units": -3.474,
-   "roi": -0.2316102,
-   "brier": 0.24622
+   "settled": 16,
+   "pending": 49,
+   "win_rate": 0.4375,
+   "units": -2.522,
+   "roi": -0.15761075,
+   "brier": 0.2469
   },
   "ML": {
    "logged": 65,
    "wins": 4,
-   "losses": 11,
+   "losses": 12,
    "pushes": 0,
    "voids": 0,
-   "settled": 15,
-   "pending": 50,
-   "win_rate": 0.26666666666666666,
-   "units": -2.973,
-   "roi": -0.19816946666666665,
-   "brier": 0.22575
+   "settled": 16,
+   "pending": 49,
+   "win_rate": 0.25,
+   "units": -3.973,
+   "roi": -0.248283875,
+   "brier": 0.22248
   },
   "TOTAL": {
    "logged": 65,
-   "wins": 6,
+   "wins": 7,
    "losses": 9,
    "pushes": 0,
    "voids": 0,
-   "settled": 15,
-   "pending": 50,
-   "win_rate": 0.4,
-   "units": -3.601,
-   "roi": -0.2400809333333333,
-   "brier": 0.26153
+   "settled": 16,
+   "pending": 49,
+   "win_rate": 0.4375,
+   "units": -2.692,
+   "roi": -0.16825768749999997,
+   "brier": 0.25941
   }
  },
  "by_version": {
@@ -134,16 +134,16 @@
   },
   "legacy": {
    "logged": 93,
-   "wins": 16,
-   "losses": 29,
+   "wins": 18,
+   "losses": 30,
    "pushes": 0,
    "voids": 0,
-   "settled": 45,
-   "pending": 48,
-   "win_rate": 0.35555555555555557,
-   "units": -10.048,
-   "roi": -0.22328686666666664,
-   "brier": 0.2445
+   "settled": 48,
+   "pending": 45,
+   "win_rate": 0.375,
+   "units": -9.186,
+   "roi": -0.19138410416666662,
+   "brier": 0.24293
   }
  },
  "calibration": [
@@ -161,25 +161,25 @@
   },
   {
    "bucket": "40\u201350%",
-   "n": 9,
-   "predicted": 0.46251,
-   "actual": 0.22222
+   "n": 11,
+   "predicted": 0.46109,
+   "actual": 0.27273
   },
   {
    "bucket": "50\u201360%",
-   "n": 28,
-   "predicted": 0.53355,
-   "actual": 0.42857
+   "n": 29,
+   "predicted": 0.53318,
+   "actual": 0.44828
   }
  ],
  "games": {
   "logged": 65,
-  "graded": 15,
-  "pending": 50,
+  "graded": 16,
+  "pending": 49,
   "winner": {
-   "n": 15,
-   "correct": 11,
-   "accuracy": 0.73333
+   "n": 16,
+   "correct": 12,
+   "accuracy": 0.75
   },
   "ats": {
    "n": 7,
@@ -187,22 +187,22 @@
    "accuracy": 0.57143
   },
   "totals": {
-   "n": 14,
-   "correct": 6,
-   "accuracy": 0.42857
+   "n": 15,
+   "correct": 7,
+   "accuracy": 0.46667
   },
   "margin_comparison": {
-   "n": 15,
-   "model_mae": 11.28133,
-   "market_mae": 11.2
+   "n": 16,
+   "model_mae": 11.70125,
+   "market_mae": 11.625
   },
   "total_comparison": {
-   "n": 15,
-   "model_mae": 13.02667,
-   "market_mae": 12.43333
+   "n": 16,
+   "model_mae": 12.25,
+   "market_mae": 11.75
   },
-  "margin_mae": 11.28133,
-  "total_mae": 13.02667,
+  "margin_mae": 11.70125,
+  "total_mae": 12.25,
   "brier": null
  },
  "props": {},
@@ -8249,9 +8249,14 @@
    "captured_at": "2026-08-23T04:20:20+00:00",
    "version": "legacy",
    "id": "game:NFL:401872931:::",
-   "result": "Pending",
+   "result": "Graded",
    "season": 2026,
-   "season_type": 2
+   "season_type": 2,
+   "actual_margin": 21.0,
+   "actual_total": 41.0,
+   "final_home": 31.0,
+   "final_away": 10.0,
+   "graded_at": "2026-09-15T08:32:25.626175+00:00"
   },
   {
    "kind": "call",
@@ -8271,12 +8276,16 @@
    "reason": null,
    "captured_at": "2026-08-23T19:56:25+00:00",
    "version": "legacy",
-   "graded_at": null,
+   "graded_at": "2026-09-15T08:32:25.626175+00:00",
    "selected": true,
    "id": "call:NFL:401872931::TOTAL:under",
-   "result": "Pending",
+   "result": "Win",
    "season": 2026,
-   "season_type": 2
+   "season_type": 2,
+   "units": 0.909091,
+   "actual": null,
+   "final_home": 31.0,
+   "final_away": 10.0
   },
   {
    "kind": "call",
@@ -8296,12 +8305,16 @@
    "reason": null,
    "captured_at": "2026-08-23T19:56:25+00:00",
    "version": "legacy",
-   "graded_at": null,
+   "graded_at": "2026-09-15T08:32:25.626175+00:00",
    "selected": false,
    "id": "call:NFL:401872931::TOTAL:over",
-   "result": "Pending",
+   "result": "Loss",
    "season": 2026,
-   "season_type": 2
+   "season_type": 2,
+   "units": -1,
+   "actual": null,
+   "final_home": 31.0,
+   "final_away": 10.0
   },
   {
    "kind": "call",
@@ -8321,12 +8334,16 @@
    "reason": null,
    "captured_at": "2026-08-23T19:56:25+00:00",
    "version": "legacy",
-   "graded_at": null,
+   "graded_at": "2026-09-15T08:32:25.626175+00:00",
    "selected": false,
    "id": "call:NFL:401872931::ML:home",
-   "result": "Pending",
+   "result": "Win",
    "season": 2026,
-   "season_type": 2
+   "season_type": 2,
+   "units": 0.645161,
+   "actual": null,
+   "final_home": 31.0,
+   "final_away": 10.0
   },
   {
    "kind": "call",
@@ -8346,12 +8363,16 @@
    "reason": null,
    "captured_at": "2026-08-23T19:56:25+00:00",
    "version": "legacy",
-   "graded_at": null,
+   "graded_at": "2026-09-15T08:32:25.626175+00:00",
    "selected": true,
    "id": "call:NFL:401872931::ML:away",
-   "result": "Pending",
+   "result": "Loss",
    "season": 2026,
-   "season_type": 2
+   "season_type": 2,
+   "units": -1,
+   "actual": null,
+   "final_home": 31.0,
+   "final_away": 10.0
   },
   {
    "kind": "call",
@@ -8371,12 +8392,16 @@
    "reason": null,
    "captured_at": "2026-08-23T19:56:25+00:00",
    "version": "legacy",
-   "graded_at": null,
+   "graded_at": "2026-09-15T08:32:25.626175+00:00",
    "selected": true,
    "id": "call:NFL:401872931::ATS:home",
-   "result": "Pending",
+   "result": "Win",
    "season": 2026,
-   "season_type": 2
+   "season_type": 2,
+   "units": 0.952381,
+   "actual": null,
+   "final_home": 31.0,
+   "final_away": 10.0
   },
   {
    "kind": "call",
@@ -8396,12 +8421,16 @@
    "reason": null,
    "captured_at": "2026-08-23T19:56:25+00:00",
    "version": "legacy",
-   "graded_at": null,
+   "graded_at": "2026-09-15T08:32:25.626175+00:00",
    "selected": false,
    "id": "call:NFL:401872931::ATS:away",
-   "result": "Pending",
+   "result": "Loss",
    "season": 2026,
-   "season_type": 2
+   "season_type": 2,
+   "units": -1,
+   "actual": null,
+   "final_home": 31.0,
+   "final_away": 10.0
   },
   {
    "kind": "game",
